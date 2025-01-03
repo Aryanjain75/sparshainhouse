@@ -1,0 +1,368 @@
+{
+  "_id": { "$oid": "65f3f21566d138d2aa5f72c0" },
+  "type": "table",
+  "name": "resturent",
+  "database": "test",
+  "data": [
+    {
+      "CloudnaryImageId": "bwmyfaudlpyeyzimhndn",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Veg. Cheese Sandwich",
+      "PRICE": "40",
+      "DISCOUNTED_PRICE": "40",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Cheese", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "ow04blomiqpfhnbf7ptd",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Chocolate Sandwich",
+      "PRICE": "50",
+      "DISCOUNTED_PRICE": "50",
+      "RATTING": "4.2",
+      "TAGS": ["Vegetarian", "Chocolate", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "64c9a3f8e63380dcac0e99ec16c5e417",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Veg. Cheese Grilled Sandwich",
+      "PRICE": "60",
+      "DISCOUNTED_PRICE": "60",
+      "RATTING": "4.7",
+      "TAGS": ["Vegetarian", "Cheese", "Grilled", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "FOOD_CATALOG/IMAGES/CMS/2024/4/2/e2108ab8-998e-4120-a534-c3fa3af54bc9_8f9d7544-d5a8-40d7-b78e-688e612285e5.JPG",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Schezwan Cheese Sandwich",
+      "PRICE": "70",
+      "DISCOUNTED_PRICE": "70",
+      "RATTING": "4.3",
+      "TAGS": ["Vegetarian", "Cheese", "Schezwan", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "c4f5872c1c61564b93ed97c5224c6b31",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Tandoor Paneer Grilled",
+      "PRICE": "80",
+      "DISCOUNTED_PRICE": "80",
+      "RATTING": "4.6",
+      "TAGS": ["Vegetarian", "Paneer", "Grilled", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "a762249e812eea6a2e3483b099ee075b",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Chilly Cheese Grilled Sandwich",
+      "PRICE": "80",
+      "DISCOUNTED_PRICE": "80",
+      "RATTING": "4.4",
+      "TAGS": ["Vegetarian", "Cheese", "Grilled", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "gexj7shwwgnsoaqez1gy",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Corn Cheese Grilled Sandwich",
+      "PRICE": "70",
+      "DISCOUNTED_PRICE": "70",
+      "RATTING": "4.3",
+      "TAGS": ["Vegetarian", "Corn", "Cheese", "Grilled", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "dneuzruzqwpvuvozqztw",
+      "DISCOUNT": "0",
+      "CUSSINE": "SANDWICH",
+      "FOODNAME": "Jungly grilled Sandwich",
+      "PRICE": "80",
+      "DISCOUNTED_PRICE": "80",
+      "RATTING": "4.2",
+      "TAGS": ["Vegetarian", "Grilled", "Sandwich"]
+    },
+    {
+      "CloudnaryImageId": "48b005e5e8502df61a5af6419b67664b",
+      "DISCOUNT": "0",
+      "CUSSINE": "BURGER",
+      "FOODNAME": "VEG. BURGER",
+      "PRICE": "60",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.1",
+      "TAGS": ["Vegetarian", "Burger"]
+    },
+    {
+      "CloudnaryImageId": "uclbw6lhtk7cv71dahq8",
+      "DISCOUNT": "0",
+      "CUSSINE": "BURGER",
+      "FOODNAME": "CHEESE BURGER",
+      "PRICE": "70",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Cheese", "Burger"]
+    },
+    {
+      "CloudnaryImageId": "97a2ee914e360cf6e4352eed4d2b2426",
+      "DISCOUNT": "0",
+      "CUSSINE": "BURGER",
+      "FOODNAME": "CHILLY CHEESE PANEER BURGER",
+      "PRICE": "80",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.6",
+      "TAGS": ["Vegetarian", "Paneer", "Cheese", "Burger"]
+    },
+    {
+      "CloudnaryImageId": "dbcfeefa113c03e29f1740d5d1410e21",
+      "DISCOUNT": "0",
+      "CUSSINE": "BURGER",
+      "FOODNAME": "SCHEZWAN PANEER BURGER",
+      "PRICE": "80",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.4",
+      "TAGS": ["Vegetarian", "Paneer", "Schezwan", "Burger"]
+    },
+    {
+      "CloudnaryImageId": "rwrouty90bcek7bafflt",
+      "DISCOUNT": "0",
+      "CUSSINE": "BURGER",
+      "FOODNAME": "MAYO CHEESE PANEER BURGER",
+      "PRICE": "90",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.3",
+      "TAGS": ["Vegetarian", "Paneer", "Mayo", "Cheese", "Burger"]
+    },
+    {
+      "CloudnaryImageId": "pbjgvpuhzsprlzeusdmd",
+      "DISCOUNT": "0",
+      "CUSSINE": "BURGER",
+      "FOODNAME": "SCHEZWAN BURGER",
+      "PRICE": "70",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.2",
+      "TAGS": ["Vegetarian", "Schezwan", "Burger"]
+    },
+    {
+      "CloudnaryImageId": "b1a610477088869afe9133bc4afd6d8ca",
+      "DISCOUNT": "0",
+      "CUSSINE": "FRENCH FRIES",
+      "FOODNAME": "FRENCH FRIES",
+      "PRICE": "70",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.0",
+      "TAGS": ["Vegetarian", "French Fries"]
+    },
+    {
+      "CloudnaryImageId": "ccee682e28a3c8df4f2c92532a8a4de0",
+      "DISCOUNT": "0",
+      "CUSSINE": "FRENCH FRIES",
+      "FOODNAME": "CLASSIC FRENCH FRIES",
+      "PRICE": "80",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.3",
+      "TAGS": ["Vegetarian", "French Fries"]
+    },
+    {
+      "CloudnaryImageId": "voxlkxi8as3at26wjqr7",
+      "DISCOUNT": "0",
+      "CUSSINE": "FRENCH FRIES",
+      "FOODNAME": "PERI PERI FRENCH FRIES",
+      "PRICE": "90",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.2",
+      "TAGS": ["Vegetarian", "Peri Peri", "French Fries"]
+    },
+    {
+      "CloudnaryImageId": "2fc086b322e2f0df114a76592b6853b7",
+      "DISCOUNT": "0",
+      "CUSSINE": "FRENCH FRIES",
+      "FOODNAME": "SCHEZWAN FRENCH FRIES",
+      "PRICE": "90",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.1",
+      "TAGS": ["Vegetarian", "Schezwan", "French Fries"]
+    },
+    {
+      "CloudnaryImageId": "djdgqtd3cgxp4yapuwy7",
+      "DISCOUNT": "0",
+      "CUSSINE": "FRENCH FRIES",
+      "FOODNAME": "CHEESE FRENCH FRIES",
+      "PRICE": "110",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.4",
+      "TAGS": ["Vegetarian", "Cheese", "French Fries"]
+    },
+    {
+      "CloudnaryImageId": "dfacc232d7d6ea0fdd2f7e5cbe5b39a4",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CHEESE CORN PIZZA",
+      "PRICE": "110",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.6",
+      "TAGS": ["Vegetarian", "Cheese", "Corn", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "fb3ea8b3a5bcfdc5d8bc520cf7ec1350",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CHEESE PIZZA",
+      "PRICE": "120",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Cheese", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "54bdfffa4b1f17a48af2e0a4b0fa5c82",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "SCHEZWAN PANEER PIZZA",
+      "PRICE": "140",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.7",
+      "TAGS": ["Vegetarian", "Paneer", "Schezwan", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "ba257bf7bd7f4f2e9d1a23e57e03e161",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "TANDOORI PANEER PIZZA",
+      "PRICE": "140",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.6",
+      "TAGS": ["Vegetarian", "Paneer", "Tandoori", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "bd936eed63d5417b8ac56b0480cb7ebd",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CHEESE BURST PIZZA",
+      "PRICE": "150",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Cheese", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "bb4d4943a2b68b6aa51447ae9faac5ad",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "MARGHERITA PIZZA",
+      "PRICE": "120",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.4",
+      "TAGS": ["Vegetarian", "Pizza", "Margherita"]
+    },
+    {
+      "CloudnaryImageId": "a6be8b5be7262901c82dd75ef50a8b02",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "PANEER TIKKA PIZZA",
+      "PRICE": "160",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.6",
+      "TAGS": ["Vegetarian", "Paneer", "Tikka", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "d20ac6c41b1a48efba6bc755e22d96a0",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CAPSICUM PIZZA",
+      "PRICE": "120",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.3",
+      "TAGS": ["Vegetarian", "Capsicum", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "abbe71bc2a5e302b87056aaecb940267",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "MEXICAN PIZZA",
+      "PRICE": "150",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Mexican", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CHILLI PANEER PIZZA",
+      "PRICE": "160",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.4",
+      "TAGS": ["Vegetarian", "Paneer", "Chilli", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "yhzbi5qrue3boay1u8kg",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CHEESE PIZZA",
+      "PRICE": "120",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Cheese", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "PEPPY PANEER PIZZA",
+      "PRICE": "160",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.6",
+      "TAGS": ["Vegetarian", "Paneer", "Peppy", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "VEG SUPREME PIZZA",
+      "PRICE": "160",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.7",
+      "TAGS": ["Vegetarian", "Supreme", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "VEG. MAYO PIZZA",
+      "PRICE": "130",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.2",
+      "TAGS": ["Vegetarian", "Mayo", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "VEG. TANDOORI PIZZA",
+      "PRICE": "150",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.5",
+      "TAGS": ["Vegetarian", "Tandoori", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "CHEESE BURST PIZZA",
+      "PRICE": "160",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.4",
+      "TAGS": ["Vegetarian", "Cheese", "Burst", "Pizza"]
+    },
+    {
+      "CloudnaryImageId": "img_food01",
+      "DISCOUNT": "0",
+      "CUSSINE": "PIZZA",
+      "FOODNAME": "MARGHERITA PIZZA",
+      "PRICE": "150",
+      "DISCOUNTED_PRICE": "",
+      "RATTING": "4.3",
+      "TAGS": ["Vegetarian", "Margherita", "Pizza"]
+    }
+  ]
+}

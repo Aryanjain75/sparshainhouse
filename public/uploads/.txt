@@ -1,0 +1,237 @@
+import { cn } from "@/lib/utils";
+import { background } from "@chakra-ui/react";
+import {
+  IconAdjustmentsBolt,
+  IconCloud,
+  IconCurrencyDollar,
+  IconEaseInOut,
+  IconHeart,
+  IconHelp,
+  IconRouteAltLeft,
+  IconTerminal2,
+} from "@tabler/icons-react";
+import { useEffect, useState } from "react";
+
+export function FeaturesSection() {
+  const movies = {
+    data: {
+      streamingTitles: [
+        {
+          id: "tt1190634",
+          titleText: {
+            text: "The Boys",
+          },
+          titleType: {
+            id: "tvSeries",
+            text: "TV Series",
+            canHaveEpisodes: true,
+            displayableProperty: {
+              value: {
+                plainText: "TV Series",
+              },
+            },
+          },
+          originalTitleText: {
+            text: "The Boys",
+          },
+          primaryImage: {
+            id: "rm4040589057",
+            width: 1080,
+            height: 1350,
+            url: "https://m.media-amazon.com/images/M/MV5BYTY2ZjYyNGUtZGVkZS00MDNhLWIwMjMtZDk4MmQ5ZWI0NTY4XkEyXkFqcGdeQXVyMTY3MDE5MDY1._V1_.jpg",
+            caption: {
+              plainText: [
+                "Laz Alonso",
+                " Jeffrey",
+                " Dean Morgan ",
+                "Karl Urban",
+                " Antony Starr",
+                " Erin Moriarty",
+                " Jack Quaid",
+                " Tomer Capone ",
+                " Karen Fukuhara",
+              ],
+            },
+          },
+          releaseYear: {
+            year: 2019,
+            endYear: null,
+          },
+          ratingsSummary: {
+            aggregateRating: 8.7,
+            voteCount: 696034,
+          },
+          runtime: {
+            seconds: 3600,
+          },
+          certificate: {
+            rating: "TV-MA",
+          },
+          canRate: {
+            isRatable: true,
+          },
+          titleGenres: {
+            genres: [
+              {
+                genre: {
+                  text: "Action",
+                },
+              },
+              {
+                genre: {
+                  text: "Comedy",
+                },
+              },
+              {
+                genre: {
+                  text: "Crime",
+                },
+              },
+            ],
+          },
+          canHaveEpisodes: true,
+          latestTrailer: {
+            id: "vi53855769",
+          },
+        },
+        // Other movie objects...
+      ],
+    },
+  };
+
+  const [selectedFeature, setSelectedFeature] = useState("");
+
+  const handleRadioChange = (title: string) => {
+    setSelectedFeature(title);
+  };
+
+  useEffect(() => {
+    console.log(selectedFeature);
+    movies.data.streamingTitles.map((element) => {
+      console.log(element);
+    });
+  }, [selectedFeature]);
+
+  return (
+    <div className="flex flex-row relative z-10 py-10 mx-auto overflow-x-auto">
+      {movies.data.streamingTitles.map((feature, index) => (
+        <Feature
+          key={feature.id}
+          {...feature}
+          selectedFeature={selectedFeature}
+          handleRadioChange={handleRadioChange}
+          index={index}
+        />
+      ))}
+    </div>
+  );
+}
+
+const Feature = ({
+  id,
+  canHaveEpisodes,
+  canRate,
+  certificate,
+  latestTrailer,
+  titleText,
+  originalTitleText,
+  primaryImage,
+  ratingsSummary,
+  releaseYear,
+  runtime,
+  titleGenres,
+  titleType,
+  selectedFeature,
+  handleRadioChange,
+  index,
+}: {
+  id: any;
+  canHaveEpisodes: any;
+  canRate: any;
+  certificate: any;
+  latestTrailer: any;
+  titleText: any;
+  originalTitleText: any;
+  primaryImage: any;
+  ratingsSummary: any;
+  releaseYear: any;
+  runtime: { seconds: string };
+  titleGenres: any;
+  titleType: any;
+  selectedFeature: string;
+  handleRadioChange: (title: string) => void;
+  index: number;
+}) => {
+  return (
+    <label
+      className={cn(
+        "flex flex-col group/feature lg:border-r py-10 relative hover:bg-[#ffffff66] dark:border-neutral-800 cursor-pointer max-w-4rem",
+        (index === 0 || index === 4) && "lg:border-l dark:border-neutral-800",
+        index < 4 && "lg:border-b dark:border-neutral-800"
+      )}
+      style={{
+        background: `url(${primaryImage.url})`,
+        color: "black",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "30rem",
+      }}
+      onClick={() => handleRadioChange(titleText.text)}
+    >
+      {index < 4 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+      )}
+      {index >= 4 && (
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+      )}
+      <input
+        type="radio"
+        className="form-radio"
+        name="feature"
+        value={id}
+        checked={selectedFeature === id}
+        onChange={() => handleRadioChange(id)}
+      />
+      <div className="text-lg font-bold mb-2 relative z-10 px-10 text-white">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-neutral-300 dark:bg-neutral-700 group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
+        <span className="group-hover inline-block text-neutral-800 dark:text-neutral-100 text-[#0d0d0d] w-fit p-[3px] bg-[#ffffff66] rounded-[12px]">
+          {originalTitleText.text}
+        </span>
+      </div>
+      {primaryImage.caption.plainText.map((item: any) => (
+        <span
+          key={item}
+          className="group-hover inline-block text-neutral-800 dark:text-neutral-100 text-[#0d0d0d] w-fit p-[3px] bg-[#ffffff66] rounded-[12px]"
+        >
+          {item}
+        </span>
+      ))}
+      <div className="mb-4 relative z-10 px-10 text-[#f3f3f3] w-[133px] bg-black rounded-[19px] dark:text-neutral-400">
+        {titleType?.text}
+      </div>
+      <div className="mb-4 relative z-10 px-10 text-[#f3f3f3] w-[133px] bg-black rounded-[19px] dark:text-neutral-400">
+        {certificate?.rating}
+      </div>
+      {canRate.isRatable && (
+        <div className="mb-4 relative z-10 px-10 text-neutral-600 dark:text-neutral-400 text-black">
+          {ratingsSummary.aggregateRating}
+        </div>
+      )}
+
+      <p className="text-sm text-white font-extrabold dark:text-neutral-300 max-w-xs relative z-10 p-[11px]">
+        {releaseYear.year}
+      </p>
+      <p className="text-sm text-white font-extrabold dark:text-neutral-300 max-w-xs relative z-10 p-[11px]">
+        {runtime.seconds} minutes
+      </p>
+      {titleGenres?.genres.map((item: any, ind: any) => (
+        <p
+          key={ind}
+          className="text-sm text-white font-extrabold dark:text-neutral-300 max-w-xs relative z-10 p-[11px]"
+        >
+          {item.genre.text}
+        </p>
+      ))}
+    </label>
+  );
+};

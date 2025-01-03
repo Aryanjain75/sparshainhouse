@@ -1,0 +1,134 @@
+{
+  "_id": { "$oid": "65fc029e07ca726d3916910d" },
+  "topic": "menudetails",
+  "data": [
+    {
+      "about": {
+        "altmainimage": "Burger with Drinks",
+        "altofferimage": "get up to 50% off now",
+        "cusinnes": "Big Deals,and Offers In Sparsha Cafe",
+        "where": "in Town!",
+        "text": "The Cafe has great ambience for family, friends and couples and provide outstanding Food Quality And have Private Theatre and open Lawn for Dinner, Celebrations.",
+        "options": [
+          "Delicious & Healthy Foods",
+          "Specific Family And Kids Zone",
+          "Music & Other Facilities",
+          "Fastest Food Home Delivery"
+        ]
+      }
+    },
+    {
+      "quat": "Eat Good Feel Good",
+      "restaurant_name": "Cafe Sparsha in House!",
+      "welcome_message": "Foodies welcome here.",
+      "button_message": "Book A Table"
+    },
+    {
+      "promo": [
+        {
+          "topic": "Pizza",
+          "quote": "Pizza is a slice of heaven."
+        },
+        {
+          "topic": "MilkShakes",
+          "quote": "Milkshakes bring all the joy."
+        },
+        {
+          "topic": "Sandwich",
+          "quote": "Sandwiches are a meal made simple."
+        },
+        {
+          "topic": "Pasta and Noodles",
+          "quote": "Pasta and noodles for the soul."
+        },
+        {
+          "topic": "French Fries And Burgers",
+          "quote": "French fries and burgers, a match made in heaven."
+        },
+        {
+          "topic": "Frankie",
+          "quote": "Frankie, the ultimate wrap delight."
+        },
+        {
+          "topic": "Mocktails",
+          "quote": "Mocktails for every occasion."
+        }
+      ]
+    },
+    {
+      "services": [
+        {
+          "Service": "Birthday hall",
+          "quot": "Our Birthday Hall provides the perfect venue for celebrating your special day with friends and family, offering a spacious, beautifully decorated area, customizable to your preferences."
+        },
+        {
+          "Service": "Delivery",
+          "quot": "Enjoy the convenience of our fast and reliable delivery service, bringing your favorite dishes straight to your doorstep, hot and fresh."
+        },
+        {
+          "Service": "Theater",
+          "quot": "Experience the magic of cinema in our state-of-the-art Theater, featuring comfortable seating, high-quality sound systems, and a wide selection of the latest blockbuster movies and classic films."
+        },
+        {
+          "Service": "Restaurant",
+          "quot": "Indulge in a culinary journey at our Restaurant, where we serve a variety of delectable dishes prepared by skilled chefs using fresh, locally-sourced ingredients to ensure an unforgettable dining experience."
+        },
+        {
+          "Service": "Private Dining",
+          "quot": "Our Private Dining service offers an exclusive and intimate setting for you to enjoy a personalized dining experience with friends, family, or colleagues."
+        },
+        {
+          "Service": "Catering",
+          "quot": "Our Catering service provides a wide range of delicious options for any event, from small gatherings to large celebrations, ensuring a memorable experience for all your guests."
+        }
+      ]
+    },    
+    {
+      "delivery": {
+        "first_part_quat": "A Moment Of Delivered On",
+        "second_part_quat": "Right Time",
+        "third_part_quat": "& Place",
+        "paragraph": "The restaurants in Hangzhou also catered to many northern Chinese who had fled south from Kaifeng during the Jurchen invasion of the 1120s, while it is also known that many restaurants were run by families.",
+        "button_data": "Order Now"
+      }
+    },
+    {
+      "CTA": {
+        "sectiontitle": "The Sparsha Have Excellent Of",
+        "sectiontitlespan": "Quality Burger and Pizzas!",
+        "sectiontextline1": "Where every flavor tells a story.",
+        "sectiontextline2": "For the love of delicious food.",
+        "sectiontextline3": "Foodies welcome here.",
+        "sectiontextline4": "Something hot. Something tasty.",
+        "sectiontextline5": "Good food. Good mood.",
+        "buttontext": "Order Now",
+        "image1altmessage": "Burger",
+        "image2altmessage": "Get up to 50% off now"
+      }
+    },
+    {
+      "testimonial": [
+        {
+          "name": "Shivu Gudlamani",
+          "text": "I would be lost without restaurant. I would like to personally thank you for your outstanding product.",
+          "rating": 5
+        },
+        {
+          "name": "Praveen Ingale",
+          "text": "I would be lost without restaurant. I would like to personally thank you for your outstanding product.",
+          "rating": 3
+        },
+        {
+          "name": "Naveen Kaluti",
+          "text": "I would be lost without restaurant. I would like to personally thank you for your outstanding product.",
+          "rating": 5
+        },
+        {
+          "name": "Robert William",
+          "text": "I would be lost without restaurant. I would like to personally thank you for your outstanding product.",
+          "rating": 1
+        }
+      ]
+    }
+  ]
+}

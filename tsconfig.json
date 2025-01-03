@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      },
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/Promo.js/promo.js", "src/app/login/page.js", "src/pages/_app.ts", "src/context/CartContext.ts", "src/context/jwtking.js", "src/app/forgetpassword/page.jsx", "src/context/UserDetailsProvider.jsx", "src/context/UserDetailsProvider.js", "src/app/updateaddress/page.ts", "src/components/utils/cloudinary.js", "src/components/linechart/linechart.jsx", "src/components/Navbar.js", "src/components/Navbar.jsx", "src/components/navbar/Navbar.jsx", "src/components/Foodproducts/update.jsx", "src/components/Foodproducts/New.jsx", "src/components/Featuredsection/Menu.jsx", "src/context/MoviesFoodContext.js", "src/components/imports/Impo.js", "src/app/theater-booking/page.js", "src/components/TheaterComponent/CustomerInfo.tsx", "src/components/TheaterComponent/CustomerInfo.js"],
+  "exclude": ["node_modules"]
+}

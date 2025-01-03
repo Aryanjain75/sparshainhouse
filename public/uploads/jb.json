@@ -1,0 +1,2305 @@
+{
+    "data":{
+        "streamingTitles":[
+
+                 {
+                                    "id": "tt11379456",
+                                    "titleText": {
+                                        "text": "My Lady Jane"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "My Lady Jane"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2872276481",
+                                        "width": 2000,
+                                        "height": 3000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNmEwYjQ5MWMtZDdiOC00NTk1LWEwOWEtYjQ2NDUxNjk2YWU5XkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText":[ "My Lady Jane (2024)"]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.4,
+                                        "voteCount": 8776
+                                    },
+                                    "runtime": {
+                                        "seconds": 3000
+                                    },
+                                    "certificate": null,
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Fantasy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "History"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1153484313"
+                                    }
+                                }
+                 , {
+                                    "id": "tt0773262",
+                                    "titleText": {
+                                        "text": "Dexter"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Dexter"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2891311105",
+                                        "width": 2400,
+                                        "height": 3263,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BZjkzMmU5MjMtODllZS00OTA5LTk2ZTEtNjdhYjZhMDA5ZTRhXkEyXkFqcGdeQXVyOTA3MTMyOTk@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Michael C. Hall "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2006,
+                                        "endYear": 2013
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.6,
+                                        "voteCount": 780598
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Mystery"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi695910425"
+                                    }
+                                }
+                 , {
+                                    "id": "tt28248897",
+                                    "titleText": {
+                                        "text": "Tyler Perry's Divorce in the Black"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Tyler Perry's Divorce in the Black"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm633696513",
+                                        "width": 1944,
+                                        "height": 2880,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNmQwZjI1NTctYmMwNS00YWQ2LWIyZmUtZGRkNTNmNzRjY2ZkXkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Meagan Good "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 4.5,
+                                        "voteCount": 2169
+                                    },
+                                    "runtime": {
+                                        "seconds": 8580
+                                    },
+                                    "certificate": {
+                                        "rating": "R"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi1429587481"
+                                    }
+                                }
+                 , {
+                                    "id": "tt12637874",
+                                    "titleText": {
+                                        "text": "Fallout"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Fallout"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2121877249",
+                                        "width": 1944,
+                                        "height": 2880,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BZjQ0YjAyNWQtMjRjMC00NzMxLTlkNjEtYWQzNmQwNGRlMGJkXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Walton Goggins","Aaron Moten","  Ella Purnell "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.4,
+                                        "voteCount": 229838
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi788252185"
+                                    }
+                                }
+                 , {
+                                    "id": "tt17279496",
+                                    "titleText": {
+                                        "text": "Civil War"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Civil War"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1657225473",
+                                        "width": 8100,
+                                        "height": 12000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BYTYyODhlODktYjUzNC00NjUyLWI1MzYtNmI0MTY3YTUxYjY2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Civil War (2024)"]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.1,
+                                        "voteCount": 135279
+                                    },
+                                    "runtime": {
+                                        "seconds": 6540
+                                    },
+                                    "certificate": {
+                                        "rating": "R"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi1756939801"
+                                    }
+                                }
+                 , {
+                                    "id": "tt0460681",
+                                    "titleText": {
+                                        "text": "Supernatural"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Supernatural"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm26375169",
+                                        "width": 423,
+                                        "height": 616,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMDFmMGZmMGItNGRjNC00NjVjLWI5ODEtNzhjMTE5MmJhN2FkXkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Jensen Ackles "," Jared Padalecki "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2005,
+                                        "endYear": 2020
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.4,
+                                        "voteCount": 489157
+                                    },
+                                    "runtime": {
+                                        "seconds": 2640
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Fantasy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Horror"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi3786522905"
+                                    }
+                                }
+                 , {
+                                    "id": "tt1632701",
+                                    "titleText": {
+                                        "text": "Suits"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Suits"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2076613889",
+                                        "width": 680,
+                                        "height": 1000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNmVmMmM5ZmItZDg0OC00NTFiLWIxNzctZjNmYTY5OTU3ZWU3XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Katherine Heigl"," Dulé Hill"," Rick Hoffman"," Gabriel Macht"," Amanda Schull"," Sarah Rafferty "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2011,
+                                        "endYear": 2019
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.4,
+                                        "voteCount": 488344
+                                    },
+                                    "runtime": {
+                                        "seconds": 2640
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi2339027993"
+                                    }
+                                }
+                 , {
+                                    "id": "tt12930350",
+                                    "titleText": {
+                                        "text": "My Spy: The Eternal City"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "My Spy: The Eternal City"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm94007553",
+                                        "width": 599,
+                                        "height": 898,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMjVhMTBlN2QtMWJmOS00OTliLWEwZTUtZjI3NWM2NjdmZjI3XkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Anna Faris"," Ken Jeong","Craig Robinson"," Kristen Schaal"," Dave Bautista","Flula Borg"," Chloe Coleman "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 5.7,
+                                        "voteCount": 3148
+                                    },
+                                    "runtime": {
+                                        "seconds": 6720
+                                    },
+                                    "certificate": {
+                                        "rating": "PG-13"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi3107178009"
+                                    }
+                                }
+                 , {
+                                    "id": "tt6473300",
+                                    "titleText": {
+                                        "text": "Mirzapur"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Mirzapur"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm3373062913",
+                                        "width": 600,
+                                        "height": 900,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BN2NlNGYwYTUtMTczMi00NGVjLTgwMzUtNjBkZjIyNDc2NjcxXkEyXkFqcGdeQXVyODQ5NDUwMDk@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": ["Kulbhushan Kharbanda"," Lilliput"," Pankaj Tripathi"," Anjumm Shharma"," Rasika Dugal","  Ali Fazal "]
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2018,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.5,
+                                        "voteCount": 85897
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1849476633"
+                                    }
+                                }
+                 , {
+                                    "id": "tt1520211",
+                                    "titleText": {
+                                        "text": "The Walking Dead"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "The Walking Dead"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm3421721345",
+                                        "width": 2000,
+                                        "height": 3000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNzI5MjUyYTEtMTljZC00NGI5LWFhNWYtYjY0ZTQ5YmEzMWRjXkEyXkFqcGdeQXVyMTY3MDE5MDY1._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Andrew Lincoln in The Walking Dead (2010)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2010,
+                                        "endYear": 2022
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.1,
+                                        "voteCount": 1095336
+                                    },
+                                    "runtime": {
+                                        "seconds": 2700
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Horror"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi2290926873"
+                                    }
+                                }
+                 ,{
+                                    "id": "tt11712058",
+                                    "titleText": {
+                                        "text": "Mayor of Kingstown"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Mayor of Kingstown"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1067941377",
+                                        "width": 1382,
+                                        "height": 2048,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BY2YxNDc1MjAtMzMxNy00ZjkyLWIwMDMtYmE2NDk3YWIyNmY1XkEyXkFqcGdeQXVyMTM1NjM2ODg1._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Mayor of Kingstown (2021)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2021,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.2,
+                                        "voteCount": 51162
+                                    },
+                                    "runtime": null,
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi2229454361"
+                                    }
+                                }
+                 , {
+                                    "id": "tt23036426",
+                                    "titleText": {
+                                        "text": "Sausage Party: Foodtopia"
+                                    },
+                                    "titleType": {
+                                        "id": "tvMiniSeries",
+                                        "text": "TV Mini Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Mini Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Sausage Party: Foodtopia"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1949331457",
+                                        "width": 404,
+                                        "height": 608,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNDU1NTVjYjctYjExOS00NDc4LWI1ZjktYWU5Yzk3YzZjNGNlXkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Sausage Party: Foodtopia (2024)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 5.8,
+                                        "voteCount": 1948
+                                    },
+                                    "runtime": {
+                                        "seconds": 2760
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Animation"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": null
+                                }
+                 , {
+                                    "id": "tt13159924",
+                                    "titleText": {
+                                        "text": "Gen V"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Gen V"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1934188033",
+                                        "width": 7213,
+                                        "height": 10236,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMGYxOWMxNjMtNjE3Mi00YTRjLTlkZWUtNDk4NzBkMWEyYWE0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Asa Germann, Derek Luh, Patrick Schwarzenegger, Jaz Sinclair, Lizze Broadway, London Thor, Maddie Phillips, and Chance Perdomo in Gen V (2023)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2023,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.7,
+                                        "voteCount": 102503
+                                    },
+                                    "runtime": {
+                                        "seconds": 3000
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi3051603737"
+                                    }
+                                }
+                 , {
+                                    "id": "tt13560574",
+                                    "titleText": {
+                                        "text": "X"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "X"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm701700609",
+                                        "width": 1080,
+                                        "height": 1350,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMTJiMmE5YWItOWZjYS00YTg0LWE0MTYtMzg2ZTY4YjNkNDEzXkEyXkFqcGdeQXVyMTAzMDg4NzU0._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Mia Goth in X (2022)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2022,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 6.5,
+                                        "voteCount": 183650
+                                    },
+                                    "runtime": {
+                                        "seconds": 6300
+                                    },
+                                    "certificate": {
+                                        "rating": "R"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Horror"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Mystery"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi3995452185"
+                                    }
+                                }
+                 , {
+                                    "id": "tt0364845",
+                                    "titleText": {
+                                        "text": "NCIS"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "NCIS: Naval Criminal Investigative Service"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm3157279233",
+                                        "width": 2000,
+                                        "height": 3000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNjQyMjkzMzYtZGZjMC00OWQzLTkwOTYtNjMzZDk2Y2RmZDE1XkEyXkFqcGdeQXVyMTE0NzY5OTk5._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Wilmer Valderrama, Rocky Carroll, Gary Cole, Katrina Law, Sean Murray, Brian Dietzen, and Diona Reasonover in NCIS (2003)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2003,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.8,
+                                        "voteCount": 165081
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1076935961"
+                                    }
+                                }
+                 , {
+                                    "id": "tt0412142",
+                                    "titleText": {
+                                        "text": "House"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "House M.D."
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2468813056",
+                                        "width": 832,
+                                        "height": 1225,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMDA4NjQzN2ItZDhhNC00ZjVlLWFjNTgtMTEyNDQyOGNjMDE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Hugh Laurie in House (2004)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2004,
+                                        "endYear": 2012
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.7,
+                                        "voteCount": 523408
+                                    },
+                                    "runtime": {
+                                        "seconds": 2700
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Mystery"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi730449689"
+                                    }
+                                }
+                  , {
+                                    "id": "tt6226232",
+                                    "titleText": {
+                                        "text": "Young Sheldon"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Young Sheldon"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2754235393",
+                                        "width": 1170,
+                                        "height": 1442,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BZTlmYjk0ZTItODNhMC00YmIyLWExZWEtYjk0YWQzMGNhOTZmXkEyXkFqcGdeQXVyMTY0Njc2MTUx._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Annie Potts, Lance Barber, Zoe Perry, Raegan Revord, Montana Jordan, and Iain Armitage in Young Sheldon (2017)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2017,
+                                        "endYear": 2024
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.7,
+                                        "voteCount": 113891
+                                    },
+                                    "runtime": {
+                                        "seconds": 1800
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-PG"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1971501337"
+                                    }
+                                }
+                  , {
+                                    "id": "tt0386676",
+                                    "titleText": {
+                                        "text": "The Office"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "The Office"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2849806081",
+                                        "width": 1280,
+                                        "height": 1922,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMDNkOTE4NDQtMTNmYi00MWE0LWE4ZTktYTc0NzhhNWIzNzJiXkEyXkFqcGdeQXVyMzQ2MDI5NjU@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Steve Carell, Jenna Fischer, Rainn Wilson, John Krasinski, and B.J. Novak in The Office (2005)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2005,
+                                        "endYear": 2013
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 9,
+                                        "voteCount": 726566
+                                    },
+                                    "runtime": {
+                                        "seconds": 1320
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi2304687129"
+                                    }
+                                }
+                  , {
+                                    "id": "tt0898266",
+                                    "titleText": {
+                                        "text": "The Big Bang Theory"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "The Big Bang Theory"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2794006016",
+                                        "width": 960,
+                                        "height": 1440,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BY2FmZTY5YTktOWRlYy00NmIyLWE0ZmQtZDg2YjlmMzczZDZiXkEyXkFqcGdeQXVyNjg4NzAyOTA@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Mayim Bialik, Kaley Cuoco, Johnny Galecki, Simon Helberg, Jim Parsons, Melissa Rauch, and Kunal Nayyar in The Big Bang Theory (2007)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2007,
+                                        "endYear": 2019
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.1,
+                                        "voteCount": 878089
+                                    },
+                                    "runtime": {
+                                        "seconds": 1320
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-PG"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Romance"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1506983193"
+                                    }
+                                }
+                  , {
+                                    "id": "tt0172495",
+                                    "titleText": {
+                                        "text": "Gladiator"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Gladiator"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2442542592",
+                                        "width": 1755,
+                                        "height": 2599,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Russell Crowe in Gladiator (2000)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2000,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.5,
+                                        "voteCount": 1639965
+                                    },
+                                    "runtime": {
+                                        "seconds": 9300
+                                    },
+                                    "certificate": {
+                                        "rating": "R"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi1675214873"
+                                    }
+                                }
+                  , {
+                                    "id": "tt2802850",
+                                    "titleText": {
+                                        "text": "Fargo"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Fargo"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm696145153",
+                                        "width": 1638,
+                                        "height": 2048,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMjNlMTIxNDEtY2U3OC00ZGFlLTgxNzEtZDU3NTdiZTAzN2MxXkEyXkFqcGdeQXVyMTU1ODIwMTM1._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Fargo (2014)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2014,
+                                        "endYear": 2024
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.9,
+                                        "voteCount": 426471
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi342279961"
+                                    }
+                                }
+                  , {
+                                    "id": "tt21469794",
+                                    "titleText": {
+                                        "text": "Space Cadet"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Space Cadet"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm569798913",
+                                        "width": 2000,
+                                        "height": 3000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNjYwNWMxN2UtMWI1NC00ZWI5LTkzYzgtMmYzNDEyODMyYmE3XkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Gabrielle Union, Emma Roberts, Desi Lydic, Andrew Call, Tom Hopper, and Poppy Liu in Space Cadet (2024)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 4.9,
+                                        "voteCount": 6191
+                                    },
+                                    "runtime": {
+                                        "seconds": 6600
+                                    },
+                                    "certificate": {
+                                        "rating": "PG-13"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi3543975449"
+                                    }
+                                }
+                  , {
+                                    "id": "tt9288030",
+                                    "titleText": {
+                                        "text": "Reacher"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Reacher"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm239294209",
+                                        "width": 404,
+                                        "height": 608,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BOWRiZjYwZjUtYmIwMy00ZDUzLTk2NjktZmJkZjRkNjU0MDE3XkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Alan Ritchson in Reacher (2022)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2022,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8,
+                                        "voteCount": 219476
+                                    },
+                                    "runtime": {
+                                        "seconds": 3000
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi2688337689"
+                                    }
+                                }
+                  ,{
+                                    "id": "tt6772802",
+                                    "titleText": {
+                                        "text": "Hillbilly Elegy"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Hillbilly Elegy"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm236640257",
+                                        "width": 1350,
+                                        "height": 2000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BZGI4NzRkNDgtYzQyOS00YWVjLTllYzctNmQ5NzkzOGIxMDBhXkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Glenn Close and Amy Adams in Hillbilly Elegy (2020)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2020,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 6.7,
+                                        "voteCount": 49803
+                                    },
+                                    "runtime": {
+                                        "seconds": 6960
+                                    },
+                                    "certificate": {
+                                        "rating": "R"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi3318792473"
+                                    }
+                                }
+                  , {
+                                    "id": "tt11311302",
+                                    "titleText": {
+                                        "text": "Vikings: Valhalla"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Vikings: Valhalla"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1930784769",
+                                        "width": 1500,
+                                        "height": 2222,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BYWFjYmMxMjMtMGE2ZC00YWZhLTgzNDYtYTA3ODA2MDg2NTA4XkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Vikings: Valhalla (2022)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2022,
+                                        "endYear": 2024
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.3,
+                                        "voteCount": 59465
+                                    },
+                                    "runtime": {
+                                        "seconds": 2700
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi3375613465"
+                                    }
+                                }
+                  ,{
+                                    "id": "tt7221388",
+                                    "titleText": {
+                                        "text": "Cobra Kai"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Cobra Kai"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1349744385",
+                                        "width": 1728,
+                                        "height": 2560,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BYjA3NDkwNzktNjJkYi00ODNhLWFhYzQtYzk5NjU4MDM0OWZmXkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Ralph Macchio, William Zabka, Mary Mouser, Peyton List, Jacob Bertrand, Tanner Buchanan, Gianni DeCenzo, and Xolo Maridueña in Cobra Kai (2018)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2018,
+                                        "endYear": 2025
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.5,
+                                        "voteCount": 207396
+                                    },
+                                    "runtime": {
+                                        "seconds": 1800
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi3894789657"
+                                    }
+                                }
+                  , {
+                                    "id": "tt3083016",
+                                    "titleText": {
+                                        "text": "Beverly Hills Cop: Axel F"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Beverly Hills Cop: Axel F"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2210099713",
+                                        "width": 6075,
+                                        "height": 9000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMDVhYWNkNTUtZWVjMC00Y2M1LWEzNmItZjFiMzA4ZjNiODI4XkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Eddie Murphy in Beverly Hills Cop: Axel F (2024)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 6.5,
+                                        "voteCount": 51374
+                                    },
+                                    "runtime": {
+                                        "seconds": 7080
+                                    },
+                                    "certificate": {
+                                        "rating": "R"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi1042859545"
+                                    }
+                                }
+                  , {
+                                    "id": "tt26548265",
+                                    "titleText": {
+                                        "text": "Maharaja"
+                                    },
+                                    "titleType": {
+                                        "id": "movie",
+                                        "text": "Movie",
+                                        "canHaveEpisodes": false,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": ""
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Maharaja"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm687304705",
+                                        "width": 1536,
+                                        "height": 2048,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BOTFlMTIxOGItZTk0Zi00MTk2LWJiM2UtMzlhZWYzNjQ4N2Y3XkEyXkFqcGc@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Maharaja (2024)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.7,
+                                        "voteCount": 21655
+                                    },
+                                    "runtime": {
+                                        "seconds": 9000
+                                    },
+                                    "certificate": null,
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": false,
+                                    "latestTrailer": {
+                                        "id": "vi135841305"
+                                    }
+                                }
+                  , {
+                                    "id": "tt4574334",
+                                    "titleText": {
+                                        "text": "Stranger Things"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Stranger Things"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm3336115457",
+                                        "width": 1080,
+                                        "height": 1350,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BMDZkYmVhNjMtNWU4MC00MDQxLWE3MjYtZGMzZWI1ZjhlOWJmXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Winona Ryder, Tom Wlaschiha, David Harbour, Brett Gelman, Maya Hawke, Jamie Campbell Bower, Natalia Dyer, Joseph Quinn, Caleb McLaughlin, Sadie Sink, Millie Bobby Brown, Finn Wolfhard, Charlie Heaton, Joe Keery, Noah Schnapp, Gaten Matarazzo, and Eduardo Franco in Stranger Things (2016)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2016,
+                                        "endYear": 2025
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.7,
+                                        "voteCount": 1359906
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Fantasy"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Horror"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1243005465"
+                                    }
+                                }
+                  , {
+                                    "id": "tt0773262",
+                                    "titleText": {
+                                        "text": "Dexter"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Dexter"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm2891311105",
+                                        "width": 2400,
+                                        "height": 3263,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BZjkzMmU5MjMtODllZS00OTA5LTk2ZTEtNjdhYjZhMDA5ZTRhXkEyXkFqcGdeQXVyOTA3MTMyOTk@._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Michael C. Hall in Dexter (2006)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2006,
+                                        "endYear": 2013
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 8.6,
+                                        "voteCount": 780598
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Mystery"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi695910425"
+                                    }
+                                }
+                  , {
+                                    "id": "tt19734104",
+                                    "titleText": {
+                                        "text": "Exploding Kittens"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Exploding Kittens"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm1032944641",
+                                        "width": 1080,
+                                        "height": 1350,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BNzAxMGE1YzUtZGZiZi00ZjdjLWE0ZTktOTJiZDljMGUyYTA2XkEyXkFqcGdeQXVyMTE2NDA4MDMy._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Exploding Kittens (2024)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 6.9,
+                                        "voteCount": 1897
+                                    },
+                                    "runtime": {
+                                        "seconds": 1500
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Animation"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Comedy"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi1473431065"
+                                    }
+                                }
+                  , {
+                                    "id": "tt0903747",
+                                    "titleText": {
+                                        "text": "Breaking Bad"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Breaking Bad"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm3116305665",
+                                        "width": 2000,
+                                        "height": 3000,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Bryan Cranston in Breaking Bad (2008)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2008,
+                                        "endYear": 2013
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 9.5,
+                                        "voteCount": 2175521
+                                    },
+                                    "runtime": {
+                                        "seconds": 2700
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Crime"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Thriller"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi547929369"
+                                    }
+                                }
+                  , {
+                                    "id": "tt16283758",
+                                    "titleText": {
+                                        "text": "Supacell"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Supacell"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm302873857",
+                                        "width": 450,
+                                        "height": 630,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BYWM3M2ViZTMtZTIxYS00ZGViLWE1MzUtOTYzMGZjOGMzYTMxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Supacell (2024)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2024,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7,
+                                        "voteCount": 11459
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi691586585"
+                                    }
+                                }
+                  , {
+                                    "id": "tt0388629",
+                                    "titleText": {
+                                        "text": "One Piece"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "One Piece: Wan pîsu"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm63129601",
+                                        "width": 7344,
+                                        "height": 10401,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BM2YwYTkwNjItNGQzNy00MWE1LWE1M2ItOTMzOGI1OWQyYjA0XkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "One Piece (1999)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 1999,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 9,
+                                        "voteCount": 248357
+                                    },
+                                    "runtime": {
+                                        "seconds": 1440
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-14"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Animation"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Action"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Adventure"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi3705259289"
+                                    }
+                                }
+                  , {
+                                    "id": "tt8740790",
+                                    "titleText": {
+                                        "text": "Bridgerton"
+                                    },
+                                    "titleType": {
+                                        "id": "tvSeries",
+                                        "text": "TV Series",
+                                        "canHaveEpisodes": true,
+                                        "displayableProperty": {
+                                            "value": {
+                                                "plainText": "TV Series"
+                                            }
+                                        }
+                                    },
+                                    "originalTitleText": {
+                                        "text": "Bridgerton"
+                                    },
+                                    "primaryImage": {
+                                        "id": "rm3083501057",
+                                        "width": 1500,
+                                        "height": 2222,
+                                        "url": "https://m.media-amazon.com/images/M/MV5BY2ZiODA2MGYtMmMxMi00YjlmLWFmYjktMWYyOTMwNWFkNWNkXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+                                        "caption": {
+                                            "plainText": "Nicola Coughlan and Luke Newton in Bridgerton (2020)"
+                                        }
+                                    },
+                                    "releaseYear": {
+                                        "year": 2020,
+                                        "endYear": null
+                                    },
+                                    "ratingsSummary": {
+                                        "aggregateRating": 7.4,
+                                        "voteCount": 188913
+                                    },
+                                    "runtime": {
+                                        "seconds": 3600
+                                    },
+                                    "certificate": {
+                                        "rating": "TV-MA"
+                                    },
+                                    "canRate": {
+                                        "isRatable": true
+                                    },
+                                    "titleGenres": {
+                                        "genres": [
+                                            {
+                                                "genre": {
+                                                    "text": "Drama"
+                                                }
+                                            },
+                                            {
+                                                "genre": {
+                                                    "text": "Romance"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "canHaveEpisodes": true,
+                                    "latestTrailer": {
+                                        "id": "vi2093663769"
+                                    }
+                                }
+            }
+        ]
+    }
+}
