@@ -95,7 +95,6 @@ function Page() {
         try{
         const data={"name":name,"email":email,"phone":phone,"date":date,"time":time,"noOfPeople":noOfPeople,"message":message};
         const response=await axios.post("/api/Resturent",data);
-        router.push("/cart");
         if(response.status>199 && response.status<300){
             toast.success("Book Successfully !  . Status will be updated through email and you can track on order history page . Thank you for booking with us .");
         }

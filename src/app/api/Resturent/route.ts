@@ -55,7 +55,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ message: "Invalid token" }, { status: 401 });
     }
    
-    const orders = await User.find({ userid: decoded.id });
+    const orders = await User.find({ email: decoded.email });
     console.log(orders);
     if (!orders.length) {
       console.log(orders);

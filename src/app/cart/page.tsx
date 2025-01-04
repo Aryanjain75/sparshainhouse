@@ -19,7 +19,7 @@ import shortid from "shortid";
 export default function Page() {
   const {addItemsToCart: FoodaddItemsToCart,deleteItemFromCart: FooddeleteItemFromCart,cart: Foodcart,clearCart: foodclear,quantity} = useContext(CartContext);
   const { username, PhoneNumber, Email,Address } = useContext(UsernameContext);
-  const [Method, setMethod] = useState("Cash On Delivery");
+  const [Method, setMethod] = useState("Online");
   const {cart: Birthdayhall,addItemsToCart: BirthdayaddItemToCart,clearCart: clearBirthdayCart,deleteItemFromCart: deleteBirthdayItem,} = useContext(BirthdayhallContext);
   const { moviedata: Movie, addItemsToCart: MovieaddItemsToCart, clearCart: clearMovieItemsCart, deleteItemFromCart: deleteMovieItem, Theaters,} = useContext(Cartcontext);
   const [Moviebillingdata, setMovieBillingData] = useState<any[]>([]);

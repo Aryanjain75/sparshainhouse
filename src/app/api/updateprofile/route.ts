@@ -1,85 +1,86 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse, NextRequest } from "next/server";
 import { connect } from "@/dbconfig/dbconfig";
 import { uploadOnCloudinary } from "@/components/utils/cloudinary";
-import multer from "multer";
-import { promisify } from "util";
 import fs from "fs";
-import { v2 as cloudinary } from 'cloudinary';
+import path from "path";
+import { v2 as cloudinary } from "cloudinary";
 import user from "@/models/Registration";
 
-// Configure Multer storage
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "public/uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, new Date().toISOString() + "-" + file.originalname);
-  }
-});
-
-const upload = multer({ storage });
-const uploadMiddleware = promisify(upload.single('image'));
-
-// Cloudinary configuration
-cloudinary.config({ 
-  cloud_name: 'devj7oonz', 
-  api_key: '651936225214174', 
-  api_secret: 'Xk32-a3iLAGMf7Iv5o3DwVaDk9w'
+// Cloudinary Configuration
+cloudinary.config({
+  cloud_name: process.env.CLOUDNAME,
+  api_key: process.env.CLOUDINARYKEYKEY,
+  api_secret: process.env.CLOUDINARYAPISECREATE,
 });
 
 connect();
 
 export async function PUT(request: NextRequest) {
   try {
-    const form = await request.formData();
-    const name = form.get('name') as string;
-    const email = form.get('email') as string;
-    const id = form.get('id') as string;
-    const file = form.get('image');
+    const formData = await request.formData();
+    const name = formData.get("name") as string;
+    const email = formData.get("email") as string;
+    const id = formData.get("id") as string;
+    const file = formData.get("image") as File;
 
-    let image: string | null = null;
-
-    if (file && file instanceof Blob) {
-      const fileBuffer = Buffer.from(await file.arrayBuffer());
-      const filePath = `public/uploads/${file.name}`;
-      fs.writeFileSync(filePath, fileBuffer);
-
-      const uploader = async (path: string) => await uploadOnCloudinary(path);
-      const avatarResponse = await uploader(String(file));
-
-      if (avatarResponse) {
-        image = avatarResponse.secure_url;
-      } else {
-        throw new Error("Failed to upload image to Cloudinary");
-      }
-
-      // Remove the file after upload
-      fs.unlinkSync(filePath);
-    }
-    else{
-      console.log("data incomplete"+form);
+    if (!name || !email || !id || !file) {
+      return NextResponse.json(
+        { error: "All fields are required." },
+        { status: 400 }
+      );
     }
 
-    const data = {
-      name,
-      email,
-      image,
-    };
+    const uploadsDir = path.join(process.cwd(), "public/uploads");
 
-    console.log(data);
-    const res = await user.findOneAndUpdate(
-      { _id: id },
-      { $set: { url: image, name, email } },
+    // Ensure the `public/uploads` directory exists
+    if (!fs.existsSync(uploadsDir)) {
+      fs.mkdirSync(uploadsDir, { recursive: true });
+    }
+
+    // Save the image to the `public/uploads` directory
+    const filePath = path.join(uploadsDir, `${Date.now()}-${file.name}`);
+    const fileBuffer = new Uint8Array(await file.arrayBuffer()); // Fixed conversion
+    fs.writeFileSync(filePath, fileBuffer);
+
+    // Upload the image to Cloudinary
+    const uploadResult = await cloudinary.uploader.upload(filePath, {
+      folder: "user-avatars",
+    });
+
+    // Clean up: Remove the local file after uploading to Cloudinary
+    fs.unlinkSync(filePath);
+
+    if (!uploadResult?.secure_url) {
+      return NextResponse.json(
+        { error: "Failed to upload image to Cloudinary." },
+        { status: 500 }
+      );
+    }
+
+    // Update the user profile in the database
+    const updatedUser = await user.findByIdAndUpdate(
+      id,
+      { $set: { name, email, url: uploadResult.secure_url } },
       { new: true }
     );
 
-    if (!res) {
-      throw new Error("User not found");
+    if (!updatedUser) {
+      return NextResponse.json({ error: "User not found." }, { status: 404 });
     }
 
-    return NextResponse.json({ message: "Profile updated successfully", data }, { status: 200 });
-  } catch (e) {
-    console.error(e);
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { message: "Profile updated successfully", user: updatedUser },
+      { status: 200 }
+    );
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json(
+      {
+        error: "Server error",
+        details: error instanceof Error ? error.message : "Unknown error",
+      },
+      { status: 500 }
+    );
   }
 }
+
