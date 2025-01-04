@@ -219,7 +219,7 @@ const List: React.FC = () => {
                 <TableCell className="tableCell">{row.method||"At the time of Arrival"}</TableCell>
                 <TableCell className="tableCell">
                   <span className={`status ${row.status === "Delivered" ? "Approved" : "Pending"}`}>
-                    {row.status}
+                    {row.status||"At confirmation"}
                   </span>
                 </TableCell>
                 <TableCell className="tableCell">

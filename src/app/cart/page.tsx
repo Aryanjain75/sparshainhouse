@@ -9,7 +9,7 @@ import Cart from "@/components/cart/cart";
 import axios from "axios";
 import { UsernameContext } from '@/context/UserContext';
 import "react-toastify/dist/ReactToastify.css";
-
+import { useRouter } from "next/navigation";
 import Moviecart from "@/components/cart/Moviecart";
 import EventTable from "@/components/cart/Birthdayhallcart";
 import { FinalCheckoutContext } from "@/context/FinalContext";
@@ -28,6 +28,7 @@ export default function Page() {
   const [Birthdayamount,setBirthdayamount]=useState(0);
   const [BirthdayDiscountamount,setBirthdayDiscountamount]=useState(0);
   const {bill,setbill}=useContext(FinalCheckoutContext);
+  const router = useRouter();
   
   const populateBirthdayhalllayout = async () => {
     const Birthdayhal = [];
@@ -89,6 +90,11 @@ export default function Page() {
 
   const checkout = async () => {
     try {
+      if(!username)
+      {
+        router.push("/login");
+        
+      }else{
       // Load Razorpay script dynamically if not already loaded
       if (!(window as any).Razorpay) {
         const script = document.createElement("script");
@@ -194,6 +200,8 @@ export default function Page() {
   
       const paymentGateway = new (window as any).Razorpay(options);
       paymentGateway.open();
+      toast.success("We will call you within 30 mins when we schedule your mention things our accuracy is 99.99% otherwise we will give your money back with 5% interest")
+    }
     } catch (error) {
       console.error("Error during checkout:", error);
       alert("An error occurred during checkout. Please try again.");
