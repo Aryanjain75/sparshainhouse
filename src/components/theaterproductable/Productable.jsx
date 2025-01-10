@@ -8,30 +8,45 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
-import Link from "next/link"; // Correct import for Link
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Link from "next/link"; 
 import "./productable.scss";
-export default function Productable() {
-  const [data, setData] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(1);
-  const itemsPerPage = 6;
-  const [searchValue, setSearchValue] = useState("");
+import CircularProgress from "@mui/material/CircularProgress";
 
-  const fetchData = async (
-    page = 1,
-  ) => {
+export default function Productable() {
+  const [moviesData, setMoviesData] = useState([]);
+  const [loading, setLoading] = useState(false);  // Loading state
+  const [deleteLoading, setDeleteLoading] = useState({state:false,id:""});  // Delete button loading
+  const [filters, setFilters] = useState({ searchValue: "", selectedRating: null });
+  const [pagination, setPagination] = useState({ currentPage: 1, totalPages: 1 });
+  const itemsPerPage = 6;
+
+  const fetchData = async (page = 1) => {
+    setLoading(true);
     try {
-      const response = await axios.get("/api/movies", {
-        params: {
-          page,
-          limit: itemsPerPage,
-        },
+      const movieResponse = await axios.get(`https://movieapi-rook.onrender.com/getmovies?title=${filters.searchValue}&start=${(page - 1) * itemsPerPage}&end=${page * itemsPerPage}`);
+      setPagination({
+        currentPage: page,
+        totalPages: Math.ceil(movieResponse.data.size / itemsPerPage) || 1,
       });
-      setData(response.data.data);
-      setTotalPages(response.data.totalPages);
-      setCurrentPage(response.data.currentPage);
+      setMoviesData(movieResponse.data.paginated || []);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      toast.error("Failed to fetch data");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleDelete = async (id) => {
+    setDeleteLoading({state:true,id:id});
+    try {
+      await axios.delete(`https://movieapi-rook.onrender.com/in/deletemovie/${id}`);
+      fetchData(pagination.currentPage);
+    } catch (error) {
+      toast.error("Error deleting item");
+    } finally {
+      setDeleteLoading({state:false,id:id});
     }
   };
 
@@ -40,82 +55,85 @@ export default function Productable() {
   }, []);
 
   useEffect(() => {
-    fetchData(currentPage);
-  }, [currentPage]);
+    fetchData(pagination.currentPage);
+  }, [pagination.currentPage]);
 
   const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(`/api/movies/${id}`);
-      fetchData(currentPage, searchValue, selectedRating, selectedTags, selectedCuisine, priceRange[0], priceRange[1]);
-    } catch (error) {
-      console.error("Error deleting item:", error);
-    }
+    setPagination((prev) => ({ ...prev, currentPage: page }));
   };
 
   return (
     <div className="productable">
-      <TableContainer component={Paper} className="tablecontainer">
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell className="tableCell">Id</TableCell>
-              <TableCell className="tableCell">Title</TableCell>
-              <TableCell className="tableCell">Type</TableCell>
-              <TableCell className="tableCell">Release Year</TableCell>
-              <TableCell className="tableCell">Rating</TableCell>
-              <TableCell className="tableCell">Genres</TableCell>
-              <TableCell className="tableCell">View</TableCell>
-              <TableCell className="tableCell">Delete</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {data && data.map((row) => (
-              <TableRow key={row._id}>
-                <TableCell className="tableCell">{row._id}</TableCell>
-                <TableCell className="tableCell">
-                  <div className="cellWrapper">
-                    <img src={row.primaryImage} alt="" className="image" />
-                    {row.titleText}
-                  </div>
-                </TableCell>
-                <TableCell className="tableCell">{row.titleType}</TableCell>
-                <TableCell className="tableCell">{row.releaseYear}</TableCell>
-                <TableCell className="tableCell">{row.ratingsSammary}</TableCell>
-                <TableCell className="tableCell">{row.titleGenres.join(", ")}</TableCell>
-                <TableCell className="tableCell">
-                  <Link href={`/admin/products/${row._id}`}>
-                    <span>VIEW</span>
-                  </Link>
-                </TableCell>
-                <TableCell className="tableCell">
-                  <button
-                    className="status"
-                    onClick={() => handleDelete(row._id)}
-                  >
-                    DELETE
-                  </button>
-                </TableCell>
+      {loading ? (
+        <div className="flex justify-center p-4">
+          <CircularProgress />
+        </div>
+      ) : (
+        <TableContainer component={Paper} className="tablecontainer">
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell className="tableCell">Id</TableCell>
+                <TableCell className="tableCell">Title</TableCell>
+                <TableCell className="tableCell">Certificate</TableCell>
+                <TableCell className="tableCell">Release Year</TableCell>
+                <TableCell className="tableCell">Rating</TableCell>
+                <TableCell className="tableCell">Vote Count</TableCell>
+                <TableCell className="tableCell">Runtime (seconds)</TableCell>
+                <TableCell className="tableCell">Genres</TableCell>
+                <TableCell className="tableCell">View</TableCell>
+                <TableCell className="tableCell">Delete</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {moviesData.map((row, id) => (
+                <TableRow key={id}>
+                  <TableCell className="tableCell">{row.id}</TableCell>
+                  <TableCell className="tableCell">
+                    <div className="cellWrapper">
+                      <img src={row.movieImage} alt="" className="image" />
+                      {row.imageCaption}
+                    </div>
+                  </TableCell>
+                  <TableCell className="tableCell">N/A</TableCell>
+                  <TableCell className="tableCell">{row.releaseYear || "N/A"}</TableCell>
+                  <TableCell className="tableCell">{row.ratingsSummary?.aggregateRating || "N/A"}</TableCell>
+                  <TableCell className="tableCell">{row.ratingsSummary?.voteCount || 0}</TableCell>
+                  <TableCell className="tableCell">{row.runtime || "N/A"}</TableCell>
+                  <TableCell className="tableCell">{row.tags.join(", ") || "N/A"}</TableCell>
+                  <TableCell className="tableCell">
+                    <Link href={`/admin/theaterproducts/${row.id}`}>
+                      <span>VIEW</span>
+                    </Link>
+                  </TableCell>
+                  <TableCell className="tableCell">
+                  <button
+                  className="status bg-red-700 text-white rounded-[10px] p-2 cursor-pointer"
+                  onClick={() => handleDelete(row.id)}
+                  disabled={deleteLoading.state && deleteLoading.id === row.id}
+                >
+                  {deleteLoading.state && deleteLoading.id === row.id ? "Deleting..." : "DELETE"}
+                </button>
+                
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
       <div className="flex justify-center mt-4">
         <button
-          onClick={() => handlePageChange(currentPage - 1)}
-          disabled={currentPage === 1}
+          onClick={() => handlePageChange(pagination.currentPage - 1)}
+          disabled={pagination.currentPage === 1 || loading}
           className="border border-black rounded p-2 mr-2"
         >
           Previous
         </button>
-        <span>{`Page ${currentPage} of ${totalPages}`}</span>
+        <span>{`Page ${pagination.currentPage} of ${pagination.totalPages}`}</span>
         <button
-          onClick={() => handlePageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
+          onClick={() => handlePageChange(pagination.currentPage + 1)}
+          disabled={pagination.currentPage === pagination.totalPages || loading}
           className="border border-black rounded p-2 ml-2"
         >
           Next

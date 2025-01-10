@@ -40,7 +40,7 @@ function CustomerInfo({ formData, handleChange }) {
     console.log(Theater); 
   }, [Theater]);
   return (
-    <div>
+    <div className="">
       <h3 className="text-2xl font-bold mb-4 text-primary font-anime text-white">
         Customer Information
       </h3>

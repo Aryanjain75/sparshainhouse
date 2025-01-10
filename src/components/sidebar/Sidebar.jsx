@@ -12,99 +12,93 @@ import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlin
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import DiamondOutlinedIcon from "@mui/icons-material/DiamondOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
-import "./sidebar.scss";
 import Link from 'next/link';
 
 function Sidebar() {
   return (
-    <div className="sidebar">
-      <div className="top">
-        <Link href="/" style={{ textDecoration: "none" }}>
-          <span className="logo text-red-800">Sparsha.</span>
+    <div className="sidebar bg-gray-900 text-white min-h-screen w-64 py-6 px-4">
+      <div className="top mb-8">
+        <Link href="/" className="block">
+          <span className="logo text-2xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+            Sparsha.
+          </span>
         </Link>
       </div>
-      <hr />
+      <hr className="border-gray-700 mb-6" />
       <div className="bottom">
-        <ul>
-          <p className="title">MAIN</p>
-          <li>
-            <DashboardIcon className="icon" />
-            <span>Dashboard</span>
-          </li>
+        <ul className="space-y-6">
+          <div className="mb-4">
+            <p className="title text-gray-400 text-xs uppercase font-semibold mb-3">MAIN</p>
+            <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all cursor-pointer">
+              <DashboardIcon className="icon text-gray-400" />
+              <span className="text-sm">Dashboard</span>
+            </li>
+          </div>
 
-          <p className="title">LISTS</p>
-          <Link href="/admin/users" style={{ textDecoration: "none" }}>
-            <li>
-              <Person3OutlinedIcon className="icon" />
-              <span>Users</span>
-            </li>
-          </Link>
+          <div className="mb-4">
+            <p className="title text-gray-400 text-xs uppercase font-semibold mb-3">LISTS</p>
+            <div className="space-y-2">
+              <Link href="/admin/users" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                  <Person3OutlinedIcon className="icon text-gray-400" />
+                  <span className="text-sm">Users</span>
+                </li>
+              </Link>
 
-          <Link href="/admin/foodproducts" style={{ textDecoration: "none" }}>
-            <li>
-              <LocalGroceryStoreOutlinedIcon className="icon" />
-              <span>food products</span>
-            </li>
-          </Link>
-          <Link href="/admin/theaterproducts" style={{ textDecoration: "none" }}>
-          <li>
-            <LocalGroceryStoreOutlinedIcon className="icon" />
-            <span>theater products</span>
-          </li>
-        </Link>
-        <Link href="/admin/birthdayhallproducts" style={{ textDecoration: "none" }}>
-            <li>
-              <LocalGroceryStoreOutlinedIcon className="icon" />
-              <span>birthday hall products</span>
-            </li>
-          </Link>
+              <Link href="/admin/foodproducts" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                  <LocalGroceryStoreOutlinedIcon className="icon text-gray-400" />
+                  <span className="text-sm capitalize">Food Products</span>
+                </li>
+              </Link>
 
-          <Link href="" style={{ textDecoration: "none" }}>
-            <li>
-              <LocalGroceryStoreOutlinedIcon className="icon" />
-              <span>birthday hall orders</span>
-            </li>
-          </Link>
-          <Link href="" style={{ textDecoration: "none" }}>
-            <li>
-              <LocalGroceryStoreOutlinedIcon className="icon" />
-              <span>resturent seat booking</span>
-            </li>
-          </Link>
-          <Link href="" style={{ textDecoration: "none" }}>
-            <li>
-              <LocalGroceryStoreOutlinedIcon className="icon" />
-              <span>theater booking</span>
-            </li>
-          </Link>
-          <Link href="/admin/orders" style={{ textDecoration: "none" }}>
-          <li>
-            <LocalGroceryStoreOutlinedIcon className="icon" />
-            <span>food orders</span>
-          </li>
-        </Link>
-          <p className="title">CHARTS</p>
-          
-          <Link href="" style={{ textDecoration: "none" }}>
-            <li>
-            <InsertChartOutlinedSharpIcon className="icon" />
-              <span>stats</span>
-            </li>
-          </Link>
-         
-          <li>
-            <ManageAccountsOutlinedIcon className="icon" />
-            <span>Profile</span>
-          </li>
-          <li>
-            <CalendarMonthOutlinedIcon className="icon" />
-            <span>Calendar</span>
-          </li>
+              <Link href="/admin/theaterproducts" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                  <LocalGroceryStoreOutlinedIcon className="icon text-gray-400" />
+                  <span className="text-sm capitalize">Theater Products</span>
+                </li>
+              </Link>
 
-          <li>
-            <ExitToAppOutlinedIcon className="icon" />
-            <span>Logout</span>
-          </li>
+              <Link href="/admin/birthdayhallproducts" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                  <LocalGroceryStoreOutlinedIcon className="icon text-gray-400" />
+                  <span className="text-sm capitalize">Birthday Hall Products</span>
+                </li>
+              </Link>
+
+              <Link href="/admin/orders" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                  <LocalGroceryStoreOutlinedIcon className="icon text-gray-400" />
+                  <span className="text-sm capitalize">Orders</span>
+                </li>
+              </Link>
+            </div>
+          </div>
+
+          <div className="mb-4">
+            <p className="title text-gray-400 text-xs uppercase font-semibold mb-3">CHARTS</p>
+            <Link href="" className="block">
+              <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                <InsertChartOutlinedSharpIcon className="icon text-gray-400" />
+                <span className="text-sm capitalize">Stats</span>
+              </li>
+            </Link>
+          </div>
+
+          <div className="mt-auto space-y-2">
+            <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all cursor-pointer">
+              <ManageAccountsOutlinedIcon className="icon text-gray-400" />
+              <span className="text-sm">Profile</span>
+            </li>
+            <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all cursor-pointer">
+              <CalendarMonthOutlinedIcon className="icon text-gray-400" />
+              <span className="text-sm">Calendar</span>
+            </li>
+            <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all cursor-pointer text-red-500">
+              <ExitToAppOutlinedIcon className="icon" />
+              <span className="text-sm">Logout</span>
+            </li>
+          </div>
         </ul>
       </div>
     </div>

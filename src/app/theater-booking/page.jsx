@@ -3,7 +3,6 @@
 "use client";
 
 import React, { useRef, useState, useEffect,useContext } from "react";
-import Input from "@/components/Input";
 import Button from "@/components/Button";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -273,6 +272,7 @@ export default function TheaterBooking() {
         <div className="text-center mb-6 text-gray-300">
           Reviews available on <a className="text-blue-400 hover:text-blue-300 underline" href="https://moviesreviewsystem.netlify.app/" target="_blank" rel="noopener noreferrer">Movie Review System</a>
         </div>
+
         <div className="space-y-6 w-[100%]">
           <CustomerInfo formData={formData} handleChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })} />
           <div className="p-4 bg-gray-800 bg-opacity-50 rounded-lg">
