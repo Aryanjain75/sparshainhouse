@@ -221,7 +221,7 @@ export default function TheaterBooking() {
                     <div className="flex justify-between mt-2 text-white text-sm">
                       <div>
                         <p>
-                          <strong>Release Year:</strong> {movie.releaseYear.year}
+                          <strong>Release Year:</strong> {movie.releaseYear}
                         </p>
                         <p>
                           <strong>Runtime:</strong> {Math.round((movie.runtime/60)/60)} hrs

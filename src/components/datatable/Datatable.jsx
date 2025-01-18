@@ -48,22 +48,22 @@ const Datatable = ({ data }) => {
     router.push(`/admin/users/${user.id}`);
   };
 
-
-
   const userColumns = [
     { field: "id", headerName: "ID", width: 100 },
     {
       field: "user",
-      headerName: "User",
+      headerName: "User", 
       width: 150,
       renderCell: (params) => {
         return (
           <Box display="flex" alignItems="center">
             <Image
               className="border-2 border-black rounded-md mr-[12px]"
-              style={{ width: "27px", marginRight: "12px" }}
+              style={{  marginRight: "12px" }}
               name={params.row.username}
               src={params.row.img}
+              width={27}
+              height={27}
               alt={params.row.username}
             />
             {params.row.username}
@@ -127,7 +127,6 @@ const Datatable = ({ data }) => {
 
   return (
     <div className="datatable mt-[4rem]" >
-      
       <DataGrid
         className="datagrid"
         rows={Data}

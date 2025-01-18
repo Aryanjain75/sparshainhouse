@@ -27,3 +27,23 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
+export async function DELETE(req: NextRequest) {
+  try {
+    const id = req.nextUrl.pathname.split('/').pop(); // Extracting the id from the URL
+
+    if (!id) {
+      return NextResponse.json({ message: 'Order ID is required' }, { status: 400 });
+    }
+
+    const deletedOrder = await Order.findByIdAndDelete(id);
+
+    if (!deletedOrder) {
+      return NextResponse.json({ message: 'Order not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ message: "Order deleted successfully" }, { status: 200 });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}

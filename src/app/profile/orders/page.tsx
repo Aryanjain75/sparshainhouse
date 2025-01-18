@@ -1,80 +1,25 @@
 "use client";
+
 import React, { useState, useContext, useEffect } from "react";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import Modal from "@mui/material/Modal";
-import Box from "@mui/material/Box";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  Button,
+  Backdrop,
+  Box,
+} from "@mui/material";
+import { Person, Refresh } from "@mui/icons-material";
 import "@/components/list/list.scss";
 import Image from "next/image";
-import { CartContext } from "@/context/CartContext";
-import Link from "next/link";
-import Cart from "@/components/cart/cart";
 import axios from "axios";
 import { UsernameContext } from "@/context/UserContext";
-import { ToastContainer,toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {
-ChevronLeft,
-  ChevronRight,
-  Copy,
-  CreditCard,
-  File,
-  Home,
-  LineChart,
-  ListFilter,
-  MoreVertical,
-  Package,
-  Package2,
-  PanelLeft,
-  Search,
-  Settings,
-  ShoppingCart,
-  Truck,
-  Users2,
-} from "lucide-react";
-
-import { Badge } from "@/components/ui/badge";
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Input } from "@/components/ui/input";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationItem,
-} from "@/components/ui/pagination";
-import { Progress } from "@/components/ui/progress";
-import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-
 
 interface Order {
   _id: string;
@@ -106,34 +51,58 @@ interface Order {
     shippingAddressState: string;
   };
 }
-
 const List: React.FC = () => {
   const { Email } = useContext(UsernameContext);
+  const [refreshing, setRefreshing] = useState(false);
   const [orders, setOrders] = useState<Order[]>([]);
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
+  const [agent, setAgent] = useState([]);
+  const [open, setOpen] = useState(false);
+  const [s, sets] = useState<Map<string, any>>(new Map());
   const [Restorders, setRestOrders] = useState<Order[]>([]);
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-      try {
-        const [foodres,seatbooking] = await Promise.all([
-          await axios.get(`/api/orders/${Email}`),
-          await axios.get(`/api/Resturent`)
-        ]);
-        if(seatbooking.status === 404){
-          toast.error("No orders found");
-        }
-        if (foodres.status === 200 ) {
-          setRestOrders(seatbooking.data.orders);
-          setOrders(foodres.data.orders); // Access orders from response
-          console.log(foodres.data.orders);
-        }
-      } catch (error) {
-        console.error(error);
-        toast.error("Error fetching orders: " + error);
+  const fetchOrders = async () => {
+    try {
+      const [foodres, seatbooking, agentData] = await Promise.all([
+        axios.get(`/api/orders/${Email}`),
+        axios.get(`/api/Resturent`),
+        axios.get("/api/agentallot"),
+      ]);
+      if (seatbooking.status === 404) {
+        toast.error("No orders found");
       }
-    };
+      if (foodres.status === 200) {
+        setRestOrders(seatbooking.data.orders);
+        setOrders(foodres.data.orders); // Access orders from response
+        setAgent(agentData.data.data);
+        console.log(foodres.data.orders);
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Error fetching orders: " + error);
+    }
+  };
 
+  useEffect(() => {
+    const agentMap = new Map();
+    agent.forEach((data: {
+      orderId: string;
+      agentName: string;
+      contactNumber: string;
+      email: string;
+      agencyName: string;
+      agentId: string;
+      specialization: string;
+      address: string;
+      experience: string;
+    }) => {
+      agentMap.set(data.orderId, data);
+    });
+    sets(agentMap);
+    console.log(agentMap);
+  }, [agent]);
+
+  useEffect(() => {
     fetchOrders();
   }, [Email]);
 
@@ -141,8 +110,22 @@ const List: React.FC = () => {
     setSelectedOrder(order);
   };
 
+  const handleRefresh = async () => {
+    setRefreshing(true);
+    await fetchOrders();
+    setRefreshing(false);
+  };
+
   const handleCloseBill = () => {
     setSelectedOrder(null);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   return (
@@ -178,11 +161,55 @@ const List: React.FC = () => {
                 <TableCell className="tableCell">{row.amount}</TableCell>
                 <TableCell className="tableCell">{row.method}</TableCell>
                 <TableCell className="tableCell">
-                  <span className={`status ${row.status === "Delivered" ? "Approved" : "Pending"}`}>
+                  <span
+                    className={`status ${
+                      row.status === "Delivered" ? "Approved" : "Pending"
+                    }`}
+                  >
                     {row.status}
                   </span>
                 </TableCell>
                 <TableCell className="tableCell">
+                  <Box className="flex gap-2">
+                    <Button
+                      variant="contained"
+                      endIcon={<Person />}
+                      color="success"
+                      size="small"
+                      disabled={!s.has(row.orderid)} // Button disabled if no agent assigned
+                      onClick={handleOpen}
+                    >
+                      Agent Info
+                    </Button>
+                    <Backdrop
+                      sx={(theme) => ({
+                        color: "#fff",
+                        zIndex: theme.zIndex.drawer + 1,
+                      })}
+                      open={open}
+                      onClick={handleClose}
+                    >
+                      <TableContainer component={Paper}>
+                        <Table
+                          sx={{ minWidth: 650 }}
+                          size="small"
+                          aria-label="a dense table"
+                        >
+                          <TableBody>
+                            {s.has(row.orderid) &&
+                              Object.entries(s.get(row.orderid)).map(
+                                ([key, value]) => (
+                                  <TableRow key={key}>
+                                    <TableCell>{key}</TableCell>
+                                    <TableCell>{value as React.ReactNode}</TableCell>
+                                  </TableRow>
+                                )
+                              )}
+                          </TableBody>
+                        </Table>
+                      </TableContainer>
+                    </Backdrop>
+                  </Box>
                   {row.status === "Delivered" ? (
                     <button
                       onClick={() => handleShowBill(row)}
@@ -191,11 +218,15 @@ const List: React.FC = () => {
                       Show Bill
                     </button>
                   ) : (
-                    <button
+                    <Button
+                      variant="contained"
+                      startIcon={<Refresh />}
+                      onClick={handleRefresh}
+                      disabled={refreshing}
                       className="bg-red-300 border-2 border-red-300 text-white rounded-md p-2 h-fit w-28"
                     >
-                      Track
-                    </button>
+                      {refreshing ? "Refreshing..." : "Refresh"}
+                    </Button>
                   )}
                 </TableCell>
               </TableRow>
@@ -215,215 +246,36 @@ const List: React.FC = () => {
                   </div>
                 </TableCell>
                 <TableCell className="tableCell">{row.date}</TableCell>
-                <TableCell className="tableCell">Confirmed</TableCell>
-                <TableCell className="tableCell">{row.method||"At the time of Arrival"}</TableCell>
+                <TableCell className="tableCell">Cleared</TableCell>
                 <TableCell className="tableCell">
-                  <span className={`status ${row.status === "Delivered" ? "Approved" : "Pending"}`}>
-                    {row.status||"At confirmation"}
+                  {row.method || "At the time of Arrival"}
+                </TableCell>
+                <TableCell className="tableCell">
+                  <span
+                    className={`status ${
+                      row.status === "confirmed" ? "Approved" : "Pending"
+                    }`}
+                  >
+                    {row.status || "At confirmation"}
                   </span>
                 </TableCell>
                 <TableCell className="tableCell">
-                  {row.status === "Delivered" ? (
-                    <button
-                      onClick={() => handleShowBill(row)}
-                      className="bg-yellow-300 border-2 border-yellow-300 text-white rounded-md p-2 h-fit w-28"
-                    >
-                      Show Bill
-                    </button>
-                  ) : (
-                    <button
-                      className="bg-red-300 border-2 border-red-300 text-white rounded-md p-2 h-fit w-28"
-                    >
-                      Track
-                    </button>
-                  )}
+                  <Button
+                    variant="contained"
+                    startIcon={<Refresh />}
+                    onClick={handleRefresh}
+                    disabled={refreshing}
+                    className="bg-red-300 border-2 border-red-300 text-white rounded-md p-2 h-fit w-28"
+                  >
+                    {refreshing ? "Refreshing..." : "Refresh"}
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
-      {/* Conditional rendering of bill in a modal */}
-      {selectedOrder && (
-        <Modal
-          open={!!selectedOrder}
-          onClose={handleCloseBill}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-        >
-          <Box className="bg-white p-8 rounded-lg shadow-lg w-fit mx-auto my-20 max-h-screen overflow-y-auto">
-            <button
-              onClick={handleCloseBill}
-              className="text-red-500 font-bold float-right"
-            >
-              Close
-            </button>
-            <Card className="overflow-hidden">
-              <CardHeader className="flex flex-row items-start bg-muted/50">
-                <div className="grid gap-0.5">
-                  <CardTitle className="group flex items-center gap-2 text-lg">
-                    Order {selectedOrder.orderid}
-                    <Button
-                      size="icon"
-                      variant="outline"
-                      className="h-6 w-6 opacity-0 transition-opacity group-hover:opacity-100"
-                    >
-                      <Copy className="h-3 w-3" />
-                      <span className="sr-only">Copy Order ID</span>
-                    </Button>
-                  </CardTitle>
-                  <CardDescription>Date: {selectedOrder.date}</CardDescription>
-                </div>
-                <div className="ml-auto flex items-center gap-1">
-                  <Button size="sm" variant="outline" className="h-8 gap-1">
-                    <Truck className="h-3.5 w-3.5" />
-                    <span className="lg:sr-only xl:not-sr-only xl:whitespace-nowrap">
-                      Track Order
-                    </span>
-                  </Button>
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button size="icon" variant="outline" className="h-8 w-8">
-                        <MoreVertical className="h-3.5 w-3.5" />
-                        <span className="sr-only">More</span>
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                      <DropdownMenuItem>Edit</DropdownMenuItem>
-                      <DropdownMenuItem>Export</DropdownMenuItem>
-                      <DropdownMenuSeparator />
-                      <DropdownMenuItem>Trash</DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </div>
-              </CardHeader>
-              <CardContent className="p-6 text-sm max-h-96 overflow-y-auto">
-                <div className="grid gap-3">
-                  <div className="font-semibold">Order Details</div>
-                  <ul className="grid gap-3">
-                    {selectedOrder.billDetails.items.map((item, index) => (
-                      <li
-                        key={index}
-                        className="flex items-center justify-between"
-                      >
-                        <span className="text-muted-foreground">
-                          {item.FOODNAME} x <span>
-                            {/* {item.QUANTITY} */}
-                            </span>
-                        </span>
-                        <span>${item.PRICE}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Separator className="my-2" />
-                  <ul className="grid gap-3">
-                    <li className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Subtotal</span>
-                      <span>
-                        ${selectedOrder.billDetails.subtotal}
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Shipping</span>
-                      <span>
-                        ${selectedOrder.billDetails.shipping}
-                      </span>
-                    </li>
-                    <li className="flex items-center justify-between">
-                      <span className="text-muted-foreground">Tax</span>
-                      <span>${selectedOrder.billDetails.tax}</span>
-                    </li>
-                    <li className="flex items-center justify-between font-semibold">
-                      <span className="text-muted-foreground">Total</span>
-                      <span>${selectedOrder.billDetails.total}</span>
-                    </li>
-                  </ul>
-                </div>
-                <Separator className="my-4" />
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="grid gap-3">
-                    <div className="font-semibold">Shipping Information</div>
-                    <address className="grid gap-0.5 not-italic text-muted-foreground">
-                      <span>{selectedOrder.customername}</span>
-                      <span>
-                        {selectedOrder.billDetails.shippingAddressStreet}
-                      </span>
-                      <span>
-                        {selectedOrder.billDetails.shippingAddressState}
-                      </span>
-                    </address>
-                  </div>
-                  <div className="grid auto-rows-max gap-3">
-                    <div className="font-semibold">Billing Information</div>
-                    <div className="text-muted-foreground">
-                      Same as shipping address
-                    </div>
-                  </div>
-                </div>
-                <Separator className="my-4" />
-                <div className="grid gap-3">
-                  <div className="font-semibold">Customer Information</div>
-                  <dl className="grid gap-3">
-                    <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">Customer</dt>
-                      <dd>{selectedOrder.customername}</dd>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">Email</dt>
-                      <dd>
-                        <a href={`mailto:${selectedOrder.email}`}>
-                          {selectedOrder.email}
-                        </a>
-                      </dd>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <dt className="text-muted-foreground">Phone</dt>
-                      <dd>
-                        <a href="tel:+1234567890">{selectedOrder.phone}</a>
-                      </dd>
-                    </div>
-                  </dl>
-                </div>
-                <Separator className="my-4" />
-                <div className="grid gap-3">
-                  <div className="font-semibold">Payment Information</div>
-                  <dl className="grid gap-3">
-                    <div className="flex items-center justify-between">
-                      <dt className="flex items-center gap-1 text-muted-foreground">
-                        <CreditCard className="h-4 w-4" />
-                        Visa
-                      </dt>
-                      <dd>**** **** **** 4532</dd>
-                    </div>
-                  </dl>
-                </div>
-              </CardContent>
-              <CardFooter className="flex flex-row items-center border-t bg-muted/50 px-6 py-3">
-                <div className="text-xs text-muted-foreground">
-                  Updated <time dateTime="2023-11-23">{selectedOrder.date}</time>
-                </div>
-                <Pagination className="ml-auto mr-0 w-auto">
-                  <PaginationContent>
-                    <PaginationItem>
-                      <Button size="icon" variant="outline" className="h-6 w-6">
-                        <ChevronLeft className="h-3.5 w-3.5" />
-                        <span className="sr-only">Previous Order</span>
-                      </Button>
-                    </PaginationItem>
-                    <PaginationItem>
-                      <Button size="icon" variant="outline" className="h-6 w-6">
-                        <ChevronRight className="h-3.5 w-3.5" />
-                        <span className="sr-only">Next Order</span>
-                      </Button>
-                    </PaginationItem>
-                  </PaginationContent>
-                </Pagination>
-              </CardFooter>
-            </Card>
-          </Box>
-        </Modal>
-      )}
-                  <ToastContainer />
+      <ToastContainer />
     </div>
   );
 };

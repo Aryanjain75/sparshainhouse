@@ -185,7 +185,7 @@ function VendorManagement({ finalData, setfinalData }) {
           <TextField
             fullWidth
             label="Pricing"
-            disabled
+             
             variant="outlined"
             value={formData.pricing}
             onChange={handleInputChange('pricing')}

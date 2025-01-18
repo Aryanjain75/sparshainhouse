@@ -104,6 +104,7 @@ export async function POST(request: NextRequest) {
           PRICE: item.PRICE,
           RATINGS: item.RATINGS,
           TAGS: item.TAGS,
+          quantity:item.quantity
         })),
         MovieItems: data.billDetails.MovieItems, // No need to map if empty
         birthdayhallitems: data.billDetails.birthdayhallitems, // No need to map if empty

@@ -35,7 +35,11 @@ const user = new mongoose.Schema({
     message:{
         type:String,
         required:[true,"please provide message"]
+    },
+    status:{
+        type:String,
+        required:[true,"Please Provide status"]
     }
 });
-const User=mongoose.models.Resturent||mongoose.model("resturents",user);
+const User=mongoose.models.resturents||mongoose.model("resturents",user);
 export default User;

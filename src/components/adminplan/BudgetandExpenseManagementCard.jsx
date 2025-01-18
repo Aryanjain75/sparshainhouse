@@ -106,7 +106,7 @@ function BudgetandExpenseManagementCard({ formData, setFormData }) {
                 variant="outlined"
                 required
                 value={budgetDetails.budgetId}
-                disabled
+                 
                 InputProps={{
                   startAdornment: <NoteAddTwoTone sx={{ mr: 1 }} />
                 }}
@@ -151,7 +151,7 @@ function BudgetandExpenseManagementCard({ formData, setFormData }) {
                 id="actual-expense"
                 label="Actual Expense"
                 variant="outlined"
-                disabled
+                 
                 value={budgetDetails.actualExpense}
                 onChange={handleChange('actualExpense')}
                 InputProps={{

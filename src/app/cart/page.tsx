@@ -11,7 +11,7 @@ import { UsernameContext } from '@/context/UserContext';
 import "react-toastify/dist/ReactToastify.css";
 import { useRouter } from "next/navigation";
 import Moviecart from "@/components/cart/Moviecart";
-import EventTable from "@/components/cart/Birthdayhallcart";
+import Birthdayhallcart from "@/components/cart/Birthdayhallcart";
 import { FinalCheckoutContext } from "@/context/FinalContext";
 import { toast } from "react-toastify";
 import Razorpay from "razorpay";
@@ -30,21 +30,6 @@ export default function Page() {
   const {bill,setbill}=useContext(FinalCheckoutContext);
   const router = useRouter();
   
-  const populateBirthdayhalllayout = async () => {
-    const Birthdayhal = [];
-    for (const data of Birthdayhall?.newCartItems || []) {
-      try {
-        const { data: halldata } = await axios.get(`/api/BirthdayhallDecoration/${data.hallid}`);
-        const b={id:data.orderid, customerName: data.customerName, contactnumber: data.contactNumber, address: data.address, TypeofEvent: data.TypeofEvent, dateTime: data.dateTime, email: data.email, numberOfSeats: data.numberOfSeats, ...halldata.data[0],};
-        Birthdayhal.push(b);
-        setBirthdayDiscountamount(BirthdayDiscountamount+Number(b?.price?.price));
-        setBirthdayamount(Birthdayamount+Number(b?.price?.mrp));
-      } catch (error) {
-        console.error("Error fetching birthday hall data:", error);
-      }
-    }
-    setBirthdayhalldata(Birthdayhal);
-  };
 
   const populatemoviebilllayout = async () => {
     const Movies = [];
@@ -62,14 +47,28 @@ export default function Page() {
     }
     setMovieBillingData(Movies);
   };
-
+  const populatepartyhalllayout = async () => {
+    const Movies = [];
+    for (const data of Birthdayhall?.newCartItems || []) {
+      try {
+        const m=data;
+        Movies.push(m);
+      } catch (error) {
+        console.error("Error fetching movie data:", error);
+      }
+    }
+    setBirthdayamount(1000*Birthdayhall?.newCartItems.length);
+    setBirthdayhalldata(Movies);
+  };
   useEffect(() => {
     if (Movie?.cartItems?.length > 0) {
       populatemoviebilllayout();
     }
-    if (Birthdayhall?.newCartItems?.length > 0) {
-      populateBirthdayhalllayout();
+    if(Birthdayhall?.newCartItems.length>0)
+    {
+      populatepartyhalllayout();
     }
+    console.log(Birthdayhall);
   }, [Movie?.cartItems, Birthdayhall?.newCartItems]);
 
   const FoodamountWithoutTax = Foodcart?.cartItems?.reduce(
@@ -81,7 +80,7 @@ export default function Page() {
     (acc: any, item: any) => acc + item.quantity * item.DISCOUNTED_PRICE,
     0
   ) || 0;
-  const amountWithDiscount=FoodamountWithDiscount+movieamount+Number(BirthdayDiscountamount||0);
+  const amountWithDiscount=FoodamountWithDiscount+movieamount+Number(Birthdayamount||0);
   const amountWithoutTax=FoodamountWithoutTax+movieamount+Birthdayamount;
 
   const taxAmount = (amountWithDiscount * 0.15).toFixed(2);
@@ -124,7 +123,7 @@ export default function Page() {
         total: totalAmount,
       };
   
-      
+      console.log(billDetails);
   
       const amount = Number(billDetails.total) * 100; 
       const res = await axios.post("/api/create-order", { amount:Math.floor(amount/100) });
@@ -249,20 +248,20 @@ export default function Page() {
                 <section className="sm:py-13 bg-blue-100">
                   <div className="container max-w-screen-xl mx-auto px-4 pt-4">
                     <h2 className="text-3xl font-semibold mb-2">
-                      {Birthdayhalldata.length|| 0} Item(s) in Birhtday hall Cart
+                      {Birthdayhall?.newCartItems.length|| 0} Item(s) in Birhtday hall Cart
                     </h2>
                   </div>
                 </section>
               </div>
               <div className="collapse-content">
-              {Birthdayhalldata.length > 0 && (
+              {Birthdayhall?.newCartItems?.length > 0 && (
                   <section className="py-10">
                     <div className="container max-w-screen-xl mx-auto px-4">
                       <div className="flex flex-col gap-4">
-                        {Birthdayhalldata.map((ind,val)=>{
-                        return <EventTable data={ind}  populateBirthdayhalllayout={populateBirthdayhalllayout} key={val}/>
+                        {Birthdayhall?.newCartItems.map((data:any,index:any)=>{
+                                                <Birthdayhallcart formData={data} index={index} deleteBirthdayItem={deleteBirthdayItem}/>
                         })}
-                      </div>
+                       </div>
                     </div>
                   </section>
                 )}

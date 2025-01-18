@@ -29,10 +29,14 @@ function Sidebar() {
         <ul className="space-y-6">
           <div className="mb-4">
             <p className="title text-gray-400 text-xs uppercase font-semibold mb-3">MAIN</p>
-            <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all cursor-pointer">
-              <DashboardIcon className="icon text-gray-400" />
-              <span className="text-sm">Dashboard</span>
-            </li>
+            
+            <Link href="/admin" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                <DashboardIcon className="icon text-gray-400" />
+                <span className="text-sm">Dashboard</span>
+                </li>
+              </Link>
+
           </div>
 
           <div className="mb-4">
@@ -72,6 +76,17 @@ function Sidebar() {
                   <span className="text-sm capitalize">Orders</span>
                 </li>
               </Link>
+
+
+              
+              <Link href="/admin/RestroSeatBooking" className="block">
+                <li className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-800 transition-all">
+                  <LocalGroceryStoreOutlinedIcon className="icon text-gray-400" />
+                  <span className="text-sm capitalize">Restro SeatBooking</span>
+                </li>
+              </Link>
+
+
             </div>
           </div>
 

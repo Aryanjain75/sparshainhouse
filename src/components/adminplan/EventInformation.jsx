@@ -227,7 +227,7 @@ function EventInformation({ finalData, setfinalData, orders, setOrders }) {
                 label="Event Id"
                 variant="outlined"
                 value={EventId}
-                disabled
+                 
                 onChange={(e)=>{setEventId(e.target.value)}}
                 InputProps={{ startAdornment: <EventNote sx={{ mr: 1 }} /> }}
               />
@@ -478,7 +478,7 @@ function EventInformation({ finalData, setfinalData, orders, setOrders }) {
                 id="EventVenueName" // Corrected field name
                 label="Venue Name"
                 variant="outlined"
-                disabled
+                 
                 value={EventVenueName} // Corrected field name
                 onChange={(e)=>{setEventVenueName(e.target.value)}}
                 InputProps={{ startAdornment: <Place sx={{ mr: 1 }} /> }}
@@ -494,7 +494,7 @@ function EventInformation({ finalData, setfinalData, orders, setOrders }) {
                 id="EventVeneueAddress" // Corrected field name
                 label="Venue Address"
                 variant="outlined"
-                disabled
+                 
                 value={EventVeneueAddress} // Corrected field name
                 onChange={(e)=>{setEventVeneueAddress(e.target.value)}}
                 InputProps={{ startAdornment: <LocationOn sx={{ mr: 1 }} /> }}
@@ -506,7 +506,7 @@ function EventInformation({ finalData, setfinalData, orders, setOrders }) {
             <Grid item xs={12} md={6}>
               <TextField
                 fullWidth
-                disabled
+                 
                 id="EventLongitude" // Corrected field name
                 label="Venue Longitude"
                 variant="outlined"
@@ -525,7 +525,7 @@ function EventInformation({ finalData, setfinalData, orders, setOrders }) {
                 id="EventLatitude" // Corrected field name
                 label="Event Latitude"
                 variant="outlined"
-                disabled
+                 
                 value={EventLatitude} // Corrected field name
                 onChange={(e)=>{setEventLatitude(e.target.value)}}
                 InputProps={{ startAdornment: <LocationOn sx={{ mr: 1 }} /> }}

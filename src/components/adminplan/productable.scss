@@ -1,0 +1,30 @@
+.productable{
+    color: #616161;
+
+    .tableCell{
+        background-color: whitesmoke;
+        color: #616161;
+        width: 3rem;
+        font-size: small;
+        .cellWrapper{
+            display: flex;
+            align-items: center;
+            width: 12rem;
+            .image{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 1px solid #210876;
+                margin-right: 10px;
+            }
+        }
+
+        span{
+            background-color: #210876;
+            color: white;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    }
+}

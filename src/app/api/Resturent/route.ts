@@ -32,7 +32,8 @@ export async function POST(request: NextRequest): Promise<NextResponse> {
       date,
       time,
       noOfPeople,
-      message
+      message,
+      status:"Pending..."
     });
     await booking.save();
 
