@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import {New} from "@/components/theaterproducts/New";
+import New from "@/components/theaterproducts/New";
 
 function Product ()  {
   return (
