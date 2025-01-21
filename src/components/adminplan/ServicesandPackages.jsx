@@ -96,7 +96,7 @@ function ServicesandPackages({formData,setFormData}) {
                   startAdornment: <Category sx={{ mr: 1 }} />,
                 }}
                 required
-                disabled
+                 
               />
             </Grid>
 

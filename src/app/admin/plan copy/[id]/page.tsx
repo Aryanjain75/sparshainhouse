@@ -62,19 +62,16 @@ import {
   Person,
   Phone
 } from "@mui/icons-material";
-import EventInformation from "@/components/adminplan/EventInformation";
-import GuestManagement from "@/components/adminplan/GuestManagement";
-import VendorManagement from "@/components/adminplan/VendorManagement";
-import FoodItemsandMovieItems from "@/components/adminplan/FoodItemsandMovieItems";
-import TaskandTimelineManagement from "@/components/adminplan/TaskandTimelineManagement";
-import BudgetandExpenseManagementCard from "@/components/adminplan/BudgetandExpenseManagementCard";
-import CommunicationandNotificationsCard from "@/components/adminplan/CommunicationandNotificationsCard";
+import EventInformation from "@/components/plan/EventInformation";
+import GuestManagement from "@/components/plan/GuestManagement";
+import VendorManagement from "@/components/plan/VendorManagement";
+import ServicesandPackages from "@/components/plan/ServicesandPackages";
+import TaskandTimelineManagement from "@/components/plan/TaskandTimelineManagement";
+import BudgetandExpenseManagementCard from "@/components/plan/BudgetandExpenseManagementCard";
+import CommunicationandNotificationsCard from "@/components/plan/CommunicationandNotificationsCard";
 import InvitationManagementCard from "@/components/plan/InvitationManagementCard";
-import Preview from "@/components/adminplan/adminpreview";
+import {DeliveryAgent} from "@/components/plan/DeliveryAgent";
 import {AdminPlanContext} from "@/context/AdminContext";
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { useRouter } from "next/navigation";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -115,27 +112,19 @@ const Product = ({ params }: { params: { id: string } }) => {
      handleNext,
      handleBack,
      steps,
-     partyplan,setpartyplan
-     
   }=useContext(AdminPlanContext);
-    const router = useRouter();
   
-useEffect(()=>{console.log(formData)},[formData])
+
  useEffect(() => {
   const fetchOrders = async () => {
-  try {
-    const [orderdata, plans] = await Promise.all([
-      axios.get("/api/orders/all"),
-      axios.get(`/api/plans/${params.id}`)
-    ]);
-    console.log(orderdata.data.orders)
-    const filteredOrders = orderdata.data.orders.filter((order:any) => order.orderid == params.id);
-    console.log(filteredOrders);
-    setOrders(filteredOrders);
-  } catch (error) {
-    console.error('Error fetching orders:', error);
-  }
-};
+    try {
+      const { data } = await axios.get("/api/orders/all");
+      const filteredOrders = data.orders.filter((order:any) => order.orderid == params.id);
+      setOrders(filteredOrders);
+    } catch (error) {
+      console.error('Error fetching orders:', error);
+    }
+  };
 
   fetchOrders();
 }, [params.id]);
@@ -143,27 +132,11 @@ useEffect(()=>{console.log(formData)},[formData])
 // Add another useEffect to log when orders are updated
 useEffect(() => {
 
-  console.log('Orders updated:', formData);
   console.log('Orders updated:', orders);
-
+  console.log(orders?.[0]?.billDetails?.birthdayhallitems?.[0]);
+  setFormData()
 }, [orders]);
-const handleSubmit = async () => {
-  try {
-    const p = {
-      orderid: orders?.[0]?.orderid,
-      plan: partyplan
-    }
-    const resp = await axios.post("/api/plans", p);
-    console.log("Plan submitted successfully:", resp.data);
-    toast.success("Plan submitted successfully!");
-    router.push("/admin/orders");
 
-  } catch (error) {
-    console.error("Error submitting plan:", error);
-    toast.error("Error submitting plan. Please try again.");
-    throw error;
-  }
-}
   const getStepContent = (step: number) => {
     switch (step) {
       case 0:
@@ -173,7 +146,7 @@ const handleSubmit = async () => {
       case 2:
         return <VendorManagement finalData={formData} setfinalData={setFormData} />;
       case 3:
-        return <FoodItemsandMovieItems finalData={formData} setfinalData={setFormData} orders={orders}  />;
+        return <ServicesandPackages formData={formData} setFormData={setFormData} />;
       case 4:
         return <TaskandTimelineManagement formData={formData} setFormData={setFormData} />;
       case 5:
@@ -181,7 +154,9 @@ const handleSubmit = async () => {
       case 6:
         return <CommunicationandNotificationsCard finalData={formData} setFinalData={setFormData} />;
       case 7:
-        return <Preview orderid={params.id} />;
+        return <InvitationManagementCard finalData={formData} setfinalData={setFormData} />;
+      case 8:
+        return <DeliveryAgent finalData={formData} setfinalData={setFormData} />;
       default:
         return 'Unknown step';
     }
@@ -237,32 +212,8 @@ const handleSubmit = async () => {
                 Next
               </Button>
             </Box>
-            <Box sx={{
-              display: 'flex',
-              justifyContent: 'center',
-
-              mt: 3,
-              px: 2
-            }}>
-            <Button
-                variant="contained"
-                disabled={activeStep != steps.length - 1}
-                endIcon={<NavigateNext />}
-                onClick={handleSubmit}
-
-                sx={{
-                  borderRadius: 2,
-                  textTransform: 'none',
-
-                  boxShadow: 2
-                }}
-              >
-                Submit Plan
-              </Button>
-              </Box>
           </CardContent>
         </Card>
-        <ToastContainer/>t
       </Container>
       <Container maxWidth="lg" sx={{ mt: 12, mb: 4 }}>
        
@@ -457,256 +408,257 @@ const handleSubmit = async () => {
       </TableBody>
     </Table>
   </div>
-))}      {orders?.[0]?.billDetails?.birthdayhallitems.map((Row:any)=>(
-    <>
+))}      {
+  orders?.[0]?.billDetails?.birthdayhallitems?.map((formData:any)=>{
     <div>
       
-      <Table stickyHeader aria-label="Event Planning Details">
-        <TableHead>
-          <TableRow>
-            <StyledTableCell>Event ID</StyledTableCell>
-            <StyledTableCell>Event Name</StyledTableCell>
-            <StyledTableCell>Type</StyledTableCell>
-            <StyledTableCell>Theme</StyledTableCell>
-            <StyledTableCell>Description</StyledTableCell>
-            <StyledTableCell>Start Date</StyledTableCell>
-            <StyledTableCell>Start Time</StyledTableCell>
-            <StyledTableCell>End Date</StyledTableCell>
-            <StyledTableCell>End Time</StyledTableCell>
-            <StyledTableCell>Venue Name</StyledTableCell>
-            <StyledTableCell>Address</StyledTableCell>
-            <StyledTableCell>Longitude</StyledTableCell>
-            <StyledTableCell>Latitude</StyledTableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {Row?.EventPlanning?.map((row:any) => (
-            <StyledTableRow  key={row.EventId} hover>
-              <StyledTableCell>{row.EventId}</StyledTableCell>
-              <StyledTableCell>{row.eventname}</StyledTableCell>
-              <StyledTableCell>{row.EventType}</StyledTableCell>
-              <StyledTableCell>{row.EventTheme}</StyledTableCell>
-              <StyledTableCell>{row.EventDescription}</StyledTableCell>
-              <StyledTableCell>{row.EventStartDate}</StyledTableCell>
-              <StyledTableCell>{row.EventStartTime}</StyledTableCell>
-              <StyledTableCell>{row.EventEndDate}</StyledTableCell>
-              <StyledTableCell>{row.EventEndTime}</StyledTableCell>
-              <StyledTableCell>{row.EventVenueName}</StyledTableCell>
-              <StyledTableCell>{row.EventVeneueAddress}</StyledTableCell>
-              <StyledTableCell>{row.EventLongitude}</StyledTableCell>
-              <StyledTableCell>{row.EventLatitude}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-        </TableBody>
-</Table>
-<TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader aria-label="Guest Planning Table">
-          {/* Guest Planning Table */}
-          <TableHead>
-            <TableRow >
-              <StyledTableCell><NoteAddTwoTone /> Guest ID</StyledTableCell>
-              <StyledTableCell><Person /> Name</StyledTableCell>
-              <StyledTableCell><Email /> Email</StyledTableCell>
-              <StyledTableCell><Phone /> Phone</StyledTableCell>
-              <StyledTableCell><EventAvailable /> RSVP</StyledTableCell>
-              <StyledTableCell><Category /> Category</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {Row?.GuestPlanning?.map((guest:any) => (
-              <StyledTableRow  key={guest.guestId} hover>
-                <StyledTableCell>{guest.guestId}</StyledTableCell>
-                <StyledTableCell>{guest.guestName}</StyledTableCell>
-                <StyledTableCell>{guest.email}</StyledTableCell>
-                <StyledTableCell>{guest.phone}</StyledTableCell>
-                <StyledTableCell>{guest.rsvpStatus}</StyledTableCell>
-                <StyledTableCell>{guest.guestCategory}</StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-          </Table>
+     <TableContainer sx={{ maxHeight: 440 }}>
+            <Table stickyHeader aria-label="Event Planning Details">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>Event ID</StyledTableCell>
+                  <StyledTableCell>Event Name</StyledTableCell>
+                  <StyledTableCell>Type</StyledTableCell>
+                  <StyledTableCell>Theme</StyledTableCell>
+                  <StyledTableCell>Description</StyledTableCell>
+                  <StyledTableCell>Start Date</StyledTableCell>
+                  <StyledTableCell>Start Time</StyledTableCell>
+                  <StyledTableCell>End Date</StyledTableCell>
+                  <StyledTableCell>End Time</StyledTableCell>
+                  <StyledTableCell>Venue Name</StyledTableCell>
+                  <StyledTableCell>Address</StyledTableCell>
+                  <StyledTableCell>Longitude</StyledTableCell>
+                  <StyledTableCell>Latitude</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {formData?.EventPlanning?.map((row:any) => (
+                  <StyledTableRow  key={row.EventId} hover>
+                    <StyledTableCell>{row.EventId}</StyledTableCell>
+                    <StyledTableCell>{row.eventname}</StyledTableCell>
+                    <StyledTableCell>{row.EventType}</StyledTableCell>
+                    <StyledTableCell>{row.EventTheme}</StyledTableCell>
+                    <StyledTableCell>{row.EventDescription}</StyledTableCell>
+                    <StyledTableCell>{row.EventStartDate}</StyledTableCell>
+                    <StyledTableCell>{row.EventStartTime}</StyledTableCell>
+                    <StyledTableCell>{row.EventEndDate}</StyledTableCell>
+                    <StyledTableCell>{row.EventEndTime}</StyledTableCell>
+                    <StyledTableCell>{row.EventVenueName}</StyledTableCell>
+                    <StyledTableCell>{row.EventVeneueAddress}</StyledTableCell>
+                    <StyledTableCell>{row.EventLongitude}</StyledTableCell>
+                    <StyledTableCell>{row.EventLatitude}</StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+      </Table>
           </TableContainer>
           <TableContainer sx={{ maxHeight: 440 }}>
-            <Table stickyHeader aria-label="Vendor Management Table">
-          {/* Vendor Management Table */}
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>Vendor ID</StyledTableCell>
-              <StyledTableCell>Name</StyledTableCell>
-              <StyledTableCell>Type</StyledTableCell>
-              <StyledTableCell>Items</StyledTableCell>
-              <StyledTableCell>Contact</StyledTableCell>
-              <StyledTableCell>Email</StyledTableCell>
-              <StyledTableCell>Phone</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {Row?.VendorManagement?.map((vendor:any, index:any) => (
-              <StyledTableRow  key={index} hover>
-                <StyledTableCell>{vendor.vendorId}</StyledTableCell>
-                <StyledTableCell>{vendor.vendorName}</StyledTableCell>
-                <StyledTableCell>{vendor.vendorType}</StyledTableCell>
-                <StyledTableCell>{vendor.items.join(', ')}</StyledTableCell>
-                <StyledTableCell>{vendor.contactInfo}</StyledTableCell>
-                <StyledTableCell>{vendor.email}</StyledTableCell>
-                <StyledTableCell>{vendor.phone}</StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
-  </Table>
-          </TableContainer>
-          <TableContainer sx={{ maxHeight: 440 }}>
-            <Table stickyHeader aria-label="Food Items Table">
-          {/* Food Items Table */}
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>ID</StyledTableCell>
-              <StyledTableCell>Food Name</StyledTableCell>
-              <StyledTableCell>Discount</StyledTableCell>
-              <StyledTableCell>Cuisine</StyledTableCell>
-              <StyledTableCell>Price</StyledTableCell>
-              <StyledTableCell>Ratings</StyledTableCell>
-              <StyledTableCell>Tags</StyledTableCell>
-              <StyledTableCell>Quantity</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {Row?.FoodItemsandMovieItems?.FoodItems?.map((data:any) => (
-              <StyledTableRow  key={data.food._id} hover>
-                <StyledTableCell>{data.food._id}</StyledTableCell>
-                <StyledTableCell>
-                  <div className="flex items-center space-x-2">
-                    <img
-                      src={data.food.CloudanaryImageId}
-                      alt="Food"
-                      className="h-10 w-10 rounded-full"
-                    />
-                    <span>{data.food.FOODNAME}</span>
-                  </div>
-                </StyledTableCell>
-                <StyledTableCell>{data.food.DISCOUNT}</StyledTableCell>
-                <StyledTableCell>{data.food.CUSSINE}</StyledTableCell>
-                <StyledTableCell>{data.food.PRICE}</StyledTableCell>
-                <StyledTableCell>{data.food.RATINGS}</StyledTableCell>
-                <StyledTableCell>{data.food.TAGS.join(', ')}</StyledTableCell>
-                <StyledTableCell>
-                  <input
-                    type="number"
-                    className="w-16 text-center bg-gray-100 border rounded"
-                    value={data.count
-                    }
-                    readOnly
-                  />
-                </StyledTableCell>
-              </StyledTableRow>
-            ))}
-          </TableBody>
+            <Table stickyHeader aria-label="Guest Planning Table">
+              {/* Guest Planning Table */}
+              <TableHead>
+                <TableRow >
+                  <StyledTableCell><NoteAddTwoTone /> Guest ID</StyledTableCell>
+                  <StyledTableCell><Person /> Name</StyledTableCell>
+                  <StyledTableCell><Email /> Email</StyledTableCell>
+                  <StyledTableCell><Phone /> Phone</StyledTableCell>
+                  <StyledTableCell><EventAvailable /> RSVP</StyledTableCell>
+                  <StyledTableCell><Category /> Category</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {formData?.GuestPlanning?.map((guest:any) => (
+                  <StyledTableRow  key={guest.guestId} hover>
+                    <StyledTableCell>{guest.guestId}</StyledTableCell>
+                    <StyledTableCell>{guest.guestName}</StyledTableCell>
+                    <StyledTableCell>{guest.email}</StyledTableCell>
+                    <StyledTableCell>{guest.phone}</StyledTableCell>
+                    <StyledTableCell>{guest.rsvpStatus}</StyledTableCell>
+                    <StyledTableCell>{guest.guestCategory}</StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+              </Table>
+              </TableContainer>
+              <TableContainer sx={{ maxHeight: 440 }}>
+                <Table stickyHeader aria-label="Vendor Management Table">
+              {/* Vendor Management Table */}
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>Vendor ID</StyledTableCell>
+                  <StyledTableCell>Name</StyledTableCell>
+                  <StyledTableCell>Type</StyledTableCell>
+                  <StyledTableCell>Items</StyledTableCell>
+                  <StyledTableCell>Contact</StyledTableCell>
+                  <StyledTableCell>Email</StyledTableCell>
+                  <StyledTableCell>Phone</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {formData?.VendorManagement?.map((vendor:any, index:any) => (
+                  <StyledTableRow  key={index} hover>
+                    <StyledTableCell>{vendor.vendorId}</StyledTableCell>
+                    <StyledTableCell>{vendor.vendorName}</StyledTableCell>
+                    <StyledTableCell>{vendor.vendorType}</StyledTableCell>
+                    <StyledTableCell>{vendor.items.join(', ')}</StyledTableCell>
+                    <StyledTableCell>{vendor.contactInfo}</StyledTableCell>
+                    <StyledTableCell>{vendor.email}</StyledTableCell>
+                    <StyledTableCell>{vendor.phone}</StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+      </Table>
+              </TableContainer>
+              <TableContainer sx={{ maxHeight: 440 }}>
+                <Table stickyHeader aria-label="Food Items Table">
+              {/* Food Items Table */}
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>ID</StyledTableCell>
+                  <StyledTableCell>Food Name</StyledTableCell>
+                  <StyledTableCell>Discount</StyledTableCell>
+                  <StyledTableCell>Cuisine</StyledTableCell>
+                  <StyledTableCell>Price</StyledTableCell>
+                  <StyledTableCell>Ratings</StyledTableCell>
+                  <StyledTableCell>Tags</StyledTableCell>
+                  <StyledTableCell>Quantity</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {formData?.FoodItemsandMovieItems?.FoodItems?.map((data:any) => (
+                  <StyledTableRow  key={data.food._id} hover>
+                    <StyledTableCell>{data.food._id}</StyledTableCell>
+                    <StyledTableCell>
+                      <div className="flex items-center space-x-2">
+                        <img
+                          src={data.food.CloudanaryImageId}
+                          alt="Food"
+                          className="h-10 w-10 rounded-full"
+                        />
+                        <span>{data.food.FOODNAME}</span>
+                      </div>
+                    </StyledTableCell>
+                    <StyledTableCell>{data.food.DISCOUNT}</StyledTableCell>
+                    <StyledTableCell>{data.food.CUSSINE}</StyledTableCell>
+                    <StyledTableCell>{data.food.PRICE}</StyledTableCell>
+                    <StyledTableCell>{data.food.RATINGS}</StyledTableCell>
+                    <StyledTableCell>{data.food.TAGS.join(', ')}</StyledTableCell>
+                    <StyledTableCell>
+                      <input
+                        type="number"
+                        className="w-16 text-center bg-gray-100 border rounded"
+                        value={data.count
+                        }
+                        readOnly
+                      />
+                    </StyledTableCell>
+                  </StyledTableRow>
+                ))}
+              </TableBody>
+                </Table>
+              </TableContainer>
+              <TableContainer sx={{ maxHeight: 440 }}>
+                <Table stickyHeader aria-label="Movie Items Table">
+              <TableHead>
+                <TableRow>
+                  <StyledTableCell>ID</StyledTableCell>
+                  <StyledTableCell>Movie Name</StyledTableCell>
+                  <StyledTableCell>certificate</StyledTableCell>
+                  <StyledTableCell>Total Ratting</StyledTableCell>
+                  <StyledTableCell>Vote Count</StyledTableCell>
+                  <StyledTableCell>releaseYear</StyledTableCell>
+                  <StyledTableCell>runtime</StyledTableCell>
+                  <StyledTableCell>Tags</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  <StyledTableRow  key={formData?.FoodItemsandMovieItems?.Movie?.id} hover>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.id}</StyledTableCell>
+                    <StyledTableCell>
+                      <div className="flex items-center space-x-2">
+                        <img
+                          src={formData?.FoodItemsandMovieItems?.Movie?.movieImage}
+                          alt={formData?.FoodItemsandMovieItems?.Movie?.imageCaption}
+                                               className="h-10 w-10 rounded-full"
+                        />
+                        <span>{formData?.FoodItemsandMovieItems?.Movie?.title}</span>
+                      </div>
+                    </StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.certificate?.rating}</StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.ratingsSummary?.aggregateRating}</StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.ratingsSummary?.voteCount}</StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.releaseYear}</StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.runtime}</StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Movie?.tags.join(', ')}</StyledTableCell>
+                    
+                  </StyledTableRow>
+                }
+              </TableBody>
+                </Table>
+              </TableContainer>
+              <TableContainer sx={{ maxHeight: 440 }}>
+                <Table stickyHeader aria-label="Movie hall Table">
+               <TableHead>
+                <TableRow>
+                  <StyledTableCell>Image</StyledTableCell>
+                  <StyledTableCell>Price</StyledTableCell>
+                  <StyledTableCell>caption</StyledTableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {
+                  <StyledTableRow  key={formData?.FoodItemsandMovieItems?.Movie?.id} hover>
+                    <StyledTableCell>
+                      <div className="flex items-center space-x-2">
+                        <img
+                          src={formData?.FoodItemsandMovieItems?.Moviehall?.Imageurl}
+                          alt={""}
+                                               className="h-[100%] w-[100%]"
+                        />
+                      </div>
+                    </StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Moviehall?.Price}</StyledTableCell>
+                    <StyledTableCell>{formData?.FoodItemsandMovieItems?.Moviehall?.caption}</StyledTableCell>
+                    
+                  </StyledTableRow>
+                }
+              </TableBody>
+                </Table>
+              </TableContainer>
+              <TableContainer sx={{ maxHeight: 440 }}>
+                <Table stickyHeader aria-label="Notification table Table">
+               <TableHead>
+                <TableRow>
+                  <StyledTableCell>notificationId</StyledTableCell>
+                  <StyledTableCell>guestName</StyledTableCell>
+                  <StyledTableCell>Address</StyledTableCell>
+                  <StyledTableCell>email</StyledTableCell>
+                  <StyledTableCell>phone</StyledTableCell>
+                  <StyledTableCell>invitationType</StyledTableCell>
+                  <StyledTableCell>messageContent</StyledTableCell>
+                  <StyledTableCell>scheduledTime</StyledTableCell>
+    
+                </TableRow>
+              </TableHead>
+              <TableBody>
+              {formData?.CommunicationandNotificationsCard?.map((data:any) => (
+                <StyledTableRow  key={data.notificationId} hover>
+                  <StyledTableCell>{data.notificationId}</StyledTableCell>
+                  <StyledTableCell>{data.guestName}</StyledTableCell>
+                  <StyledTableCell>{data.Address}</StyledTableCell>
+                  <StyledTableCell>{data?.email}</StyledTableCell>
+                  <StyledTableCell>{data?.phone}</StyledTableCell>
+                  <StyledTableCell>{data?.invitationType}</StyledTableCell>
+                  <StyledTableCell>{data?.messageContent}</StyledTableCell>
+                  <StyledTableCell>{data?.scheduledTime}</StyledTableCell>
+                </StyledTableRow>
+              ))}
+              </TableBody>
             </Table>
           </TableContainer>
-          <TableContainer sx={{ maxHeight: 440 }}>
-            <Table stickyHeader aria-label="Movie Items Table">
-          <TableHead>
-            <TableRow>
-              <StyledTableCell>ID</StyledTableCell>
-              <StyledTableCell>Movie Name</StyledTableCell>
-              <StyledTableCell>certificate</StyledTableCell>
-              <StyledTableCell>Total Ratting</StyledTableCell>
-              <StyledTableCell>Vote Count</StyledTableCell>
-              <StyledTableCell>releaseYear</StyledTableCell>
-              <StyledTableCell>runtime</StyledTableCell>
-              <StyledTableCell>Tags</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {
-              <StyledTableRow  key={Row?.FoodItemsandMovieItems?.Movie?.id} hover>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.id}</StyledTableCell>
-                <StyledTableCell>
-                  <div className="flex items-center space-x-2">
-                    <img
-                      src={Row?.FoodItemsandMovieItems?.Movie?.movieImage}
-                      alt={Row?.FoodItemsandMovieItems?.Movie?.imageCaption}
-                                           className="h-10 w-10 rounded-full"
-                    />
-                    <span>{Row?.FoodItemsandMovieItems?.Movie?.title}</span>
-                  </div>
-                </StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.certificate?.rating}</StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.ratingsSummary?.aggregateRating}</StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.ratingsSummary?.voteCount}</StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.releaseYear}</StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.runtime}</StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Movie?.tags.join(', ')}</StyledTableCell>
-                
-              </StyledTableRow>
-            }
-          </TableBody>
-            </Table>
-          </TableContainer>
-          <TableContainer sx={{ maxHeight: 440 }}>
-            <Table stickyHeader aria-label="Movie hall Table">
-           <TableHead>
-            <TableRow>
-              <StyledTableCell>Image</StyledTableCell>
-              <StyledTableCell>Price</StyledTableCell>
-              <StyledTableCell>caption</StyledTableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {
-              <StyledTableRow  key={Row?.FoodItemsandMovieItems?.Movie?.id} hover>
-                <StyledTableCell>
-                  <div className="flex items-center space-x-2">
-                    <img
-                      src={Row?.FoodItemsandMovieItems?.Moviehall?.Imageurl}
-                      alt={""}
-                                           className="h-[100%] w-[100%]"
-                    />
-                  </div>
-                </StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Moviehall?.Price}</StyledTableCell>
-                <StyledTableCell>{Row?.FoodItemsandMovieItems?.Moviehall?.caption}</StyledTableCell>
-                
-              </StyledTableRow>
-            }
-          </TableBody>
-            </Table>
-          </TableContainer>
-          <TableContainer sx={{ maxHeight: 440 }}>
-           1 <Table stickyHeader aria-label="Notification table Table">
-           <TableHead>
-            <TableRow>
-              <StyledTableCell>notificationId</StyledTableCell>
-              <StyledTableCell>guestName</StyledTableCell>
-              <StyledTableCell>Address</StyledTableCell>
-              <StyledTableCell>email</StyledTableCell>
-              <StyledTableCell>phone</StyledTableCell>
-              <StyledTableCell>invitationType</StyledTableCell>
-              <StyledTableCell>messageContent</StyledTableCell>
-              <StyledTableCell>scheduledTime</StyledTableCell>
-
-            </TableRow>
-          </TableHead>
-          <TableBody>
-          {Row?.CommunicationandNotificationsCard?.map((data:any) => (
-            <StyledTableRow  key={data.notificationId} hover>
-              <StyledTableCell>{data.notificationId}</StyledTableCell>
-              <StyledTableCell>{data.guestName}</StyledTableCell>
-              <StyledTableCell>{data.Address}</StyledTableCell>
-              <StyledTableCell>{data?.email}</StyledTableCell>
-              <StyledTableCell>{data?.phone}</StyledTableCell>
-              <StyledTableCell>{data?.invitationType}</StyledTableCell>
-              <StyledTableCell>{data?.messageContent}</StyledTableCell>
-              <StyledTableCell>{data?.scheduledTime}</StyledTableCell>
-            </StyledTableRow>
-          ))}
-          </TableBody>
-        </Table>
-        
-      </TableContainer>
-     </div>
-    </>
-))}
+    </div>
+  })
+}
               </TableContainer>
               
             </Paper>

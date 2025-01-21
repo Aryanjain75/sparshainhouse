@@ -6,10 +6,10 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import "./widget.scss";
 
-const Widget = ({ type }) => {
+const Widget = ({ type,value }) => {
   let data;
   // temp
-  const amount = 500;
+  const amount = value;
   const diff = 30;
   
   switch (type) {

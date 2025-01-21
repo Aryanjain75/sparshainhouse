@@ -1,49 +1,53 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "@/components/sidebar/Sidebar";
 import "./new.css";
 import { DriveFolderUploadOutlined } from "@mui/icons-material";
 import shortid from "shortid";
+import TextField from "@mui/material/TextField";
+import { Button, Chip } from "@mui/material";
 
 export default function New() {
-  const [file, setFile] = useState(null);
+  const [file, setFile] = useState<File | null>(null);
   const [attach, setAttach] = useState("");
-  const [id,setid]=useState(shortid.generate());
+  const [id, setId] = useState(shortid.generate());
   const [title, setTitle] = useState("");
   const [imageCaption, setImageCaption] = useState("");
-  const [releaseYear, setReleaseYear] = useState({"endYear": null,"year": 0});
-  const [rattingSummary,setrattingSummary]=useState({ aggregateRatting:5,voteCount:0});
-  const [runtime, setRuntime] = useState({seconds:0});
-  const [tags, setTags] = useState([""]);
-  const [movieImage, setMovieImage] = useState("");
-  const [certificate, setcertificate] = useState("");
-  const [reviews,setreviews]=useState("");
-  const [reviewstars,setStars]=useState("");
-  const [latestTrailer,setlatestTrailer]=useState({});
-  const [avatarPreview, setAvatarPreview] = useState("");
+  const [releaseYear, setReleaseYear] = useState({ endYear: null, year: 0 });
+  const [ratingSummary, setRatingSummary] = useState({
+    aggregateRating: 5,
+    voteCount: 0,
+  });
+  const [runtime, setRuntime] = useState({ seconds: 0 });
+  const [tags, setTags] = useState<string[]>([]);
+  const [movieImage, setMovieImage] = useState<string>("");
+  const [certificate, setCertificate] = useState("");
+  const [latestTrailer, setLatestTrailer] = useState<any>({});
+  const [avatarPreview, setAvatarPreview] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const router = useRouter();
-  const submitHandler = async (e:any) => {
-    e.preventDefault();
 
+  const submitHandler = async (e: React.FormEvent) => {
+    e.preventDefault();
     setLoading(true);
+
     try {
       await axios.post(`https://movieapi-rook.onrender.com/postmovie`, {
         id,
-        title, 
-        movieImage, 
-        imageCaption, 
-        releaseYear, 
-        rattingSummary,
-        runtime, 
-        certificate, 
-        tags, 
-        latestTrailer :[]
+        title,
+        movieImage,
+        imageCaption,
+        releaseYear,
+        ratingSummary,
+        runtime,
+        certificate,
+        tags,
+        latestTrailer: [],
       });
       router.push("/admin/theaterproducts");
       toast.success("Movie updated successfully!");
@@ -55,7 +59,7 @@ export default function New() {
     }
   };
 
-  const onChange = (e:any) => {
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       const reader = new FileReader();
@@ -65,218 +69,223 @@ export default function New() {
         }
       };
       reader.readAsDataURL(file);
-      setMovieImage(file);
+      setMovieImage(URL.createObjectURL(file));
     }
   };
 
-  const Attach = () => {
+  const attachTag = () => {
     if (attach.trim() !== "") {
       setTags((prevTags) => [...prevTags, attach]);
       setAttach("");
     }
   };
 
-  const removeTag = (indexToRemove:any) => {
+  const removeTag = (indexToRemove: number) => {
     setTags((prevTags) => prevTags.filter((_, index) => index !== indexToRemove));
   };
 
   const cancelHandler = () => {
-    router.push("/admin/theaterproducts");  // Navigates to the movie list or admin products page
+    router.push("/admin/theaterproducts");
   };
 
   return (
-    <div className="new">
-      <Sidebar />
-      <div className="newContainer">
-        <div className="top" style={{ margin: "105px 0px 10px 10px " }}>
-          <h1>Update Movie</h1>
-        </div>
-        <div className="bottom">
-          <div className="left">
-            <div key={id} className="relative bg-gray-800 rounded-md w-60" style={{width:"230px"}}>
+    <>
+      <div className="new">
+        <Sidebar />
+        <div className="newContainer">
+          <div className="top" style={{ margin: "105px 0px 10px 10px " }}>
+            <h1 className="text-2xl font-bold text-gray-800">Update Movie</h1>
+          </div>
+          <div className="bottom flex flex-col md:flex-row gap-8 p-6">
+            <div className="left w-full md:w-1/3">
               <div
-                className="sm:w-1/6 h-32 rounded-md bg-cover bg-center w-fit font-black cursor-pointer"
-                style={{
-                  backgroundImage: `url(${movieImage})`,
-                  backgroundPosition: "center",
-                  backgroundSize: "cover",
-                  width: "230px",
-                  height: "100%",
-                  border: "1px solid white",
-                }}
+                key={id}
+                className="relative bg-gray-800 rounded-lg shadow-xl overflow-hidden"
+                style={{ maxWidth: "300px" }}
               >
                 <div
-                  className="bg-opacity-50 text-white text-center rounded-b-lg flex flex-col"
-                  style={{ backgroundColor: "rgba(0, 0, 0, 0.50)", height: "100%" }}
+                  className="aspect-[2/3] rounded-t-lg bg-cover bg-center cursor-pointer transition-transform hover:scale-105"
+                  style={{
+                    backgroundImage: `url(${movieImage})`,
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    border: "2px solid white",
+                  }}
                 >
-                  <div
-                    className="flex flex-col flex-grow p-2 text-[#48bfe3]"
-                    style={{ height: "220px", display: "flex", justifyContent: "space-around" }}
-                  >
-                    <h2 className="text-lg font-extrabold font-serif text-gray-800">{title}</h2>
-                    <p
-                      className="text-gray-600 text-sm"
-                      style={{ color: "white", fontWeight: "bolder", height: "65px", overflow: "hidden" }}
-                    >
-                      {imageCaption}
-                    </p>
-                    <div className="flex justify-between mt-2 text-white text-sm">
-                   
-                      <div>
-                        <p>
-                          <strong>Release Year:</strong> {releaseYear?.year}
-                        </p>
-                        <p>
-                          <strong>Runtime:</strong> {runtime.seconds/3600} hrs {(runtime.seconds/60)%60}min {((runtime.seconds%60)%60)}
-                        </p>
+                  <div className="h-full bg-gradient-to-t from-black/80 to-transparent">
+                    <div className="flex flex-col h-full justify-end p-4 space-y-3">
+                      <h2 className="text-xl font-bold text-white">{title}</h2>
+                      <p className="text-gray-200 text-sm line-clamp-3">
+                        {imageCaption}
+                      </p>
+                      <div className="grid grid-cols-2 gap-4 text-white text-sm">
+                        <div>
+                          <p className="flex items-center gap-1">
+                            <span className="font-semibold">Release:</span>{" "}
+                            {releaseYear?.year}
+                          </p>
+                          <p className="flex items-center gap-1">
+                            <span className="font-semibold">Runtime:</span>{" "}
+                            {Math.floor(runtime.seconds / 3600)} hrs{" "}
+                            {(runtime.seconds / 60) % 60} min
+                          </p>
+                        </div>
+                        <div>
+                          <p className="flex items-center gap-1">
+                            <span className="font-semibold">Rating:</span>{" "}
+                            {ratingSummary?.aggregateRating} ⭐
+                          </p>
+                          <p className="flex items-center gap-1">
+                            <span className="font-semibold">Votes:</span>{" "}
+                            {ratingSummary?.voteCount}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p>
-                          <strong>Rating:</strong> {rattingSummary?.aggregateRatting} ⭐
-                        </p>
-                        <p>
-                          <strong>Votes:</strong> {rattingSummary?.voteCount}
-                        </p>
+                      <div className="flex flex-wrap gap-2">
+                        {tags &&
+                          tags.map((tag, id) => (
+                            <span
+                              key={id}
+                              className="px-3 py-1 bg-white/20 text-white rounded-full text-xs backdrop-blur-sm"
+                            >
+                              {tag}
+                            </span>
+                          ))}
                       </div>
-                    </div>
-                    <div className="mt-2 flex gap-2">
-                      {tags && tags.map((tag,id) => (
-                        <span
-                          key={id}
-                          className="px-2 py-1 bg-[#7E99A3] text-[#4C585B] rounded-md text-xs border-white"
-                        >
-                          {tag}
-                        </span>
-                      ))}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className="right">
-            <form className="grid md:grid-cols-2 sm:grid-cols-1 justify-start" onSubmit={submitHandler}>
-              <div className="formInput">
-                <label htmlFor="file">
-                  Image: <DriveFolderUploadOutlined className="icon" />
-                </label>
-                <input
-                  className="bg-white border-2 border-black m-[5px] p-2"
-                  type="file"
-                  id="file"
-                  style={{ display: "none" }}
-                  onChange={onChange}
-                />
-              </div>
-              <div className="flex flex-row">
-                <label htmlFor="id" className="flex w-20">id</label>
-                <input
-                  type="text"
-                  id="id"
-                  className="bg-white border-2 border-black m-[5px] p-2"
+            <div className="right w-full md:w-2/3">
+              <form
+                className="grid md:grid-cols-2 gap-8"
+                onSubmit={submitHandler}
+              >
+                <div className="formInput col-span-2">
+                  <Button
+                    component="label"
+                    variant="outlined"
+                    startIcon={<DriveFolderUploadOutlined />}
+                    sx={{ width: "100%", p: 2, borderStyle: "dashed" }}
+                  >
+                    Upload Image
+                    <input
+                      type="file"
+                      id="file"
+                      hidden
+                      onChange={onChange}
+                      accept="image/*"
+                    />
+                  </Button>
+                </div>
+
+                <TextField
+                  label="Movie ID"
+                  variant="outlined"
+                  fullWidth
                   value={id}
-                  onChange={(e) => setid(e.target.value)}
+                  onChange={(e) => setId(e.target.value)}
                 />
-              </div>
-              <div className="flex flex-row">
-                <label htmlFor="title" className="flex w-20">Title</label>
-                <input
-                  type="text"
-                  id="title"
-                  className="bg-white border-2 border-black m-[5px] p-2"
+
+                <TextField
+                  label="Title"
+                  variant="outlined"
+                  fullWidth
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                 />
-              </div>
-              <div className="flex flex-row">
-                <label htmlFor="releaseYear" className="flex w-20">Release Year</label>
-                <input
+
+                <TextField
+                  label="Release Year"
                   type="number"
-                  id="releaseYear"
-                  className="bg-white border-2 border-black m-[5px] p-2"
+                  variant="outlined"
+                  fullWidth
                   value={releaseYear.year}
-                  onChange={(e) => setReleaseYear({...releaseYear, year: Number(e.target.value)})}
+                  onChange={(e) =>
+                    setReleaseYear({
+                      ...releaseYear,
+                      year: Number(e.target.value),
+                    })
+                  }
                 />
-              </div>
-              <div className="flex flex-row">
-                <label htmlFor="aggregateRatting" className="flex w-20">aggregateRatting</label>
-                <input
+
+                <TextField
+                  label="Rating"
                   type="number"
-                  id="aggregateRatting"
-                  className="bg-white border-2 border-black m-[5px] p-2"
-                  value={rattingSummary.aggregateRatting}
-                  onChange={(e) => setrattingSummary({...rattingSummary, aggregateRatting: parseFloat(e.target.value)})}
+                  variant="outlined"
+                  fullWidth
+                  inputProps={{ step: 0.1, min: 0, max: 10 }}
+                  value={ratingSummary.aggregateRating}
+                  onChange={(e) =>
+                    setRatingSummary({
+                      ...ratingSummary,
+                      aggregateRating: parseFloat(e.target.value),
+                    })
+                  }
                 />
-              </div>
-              <div className="flex flex-row">
-                <label htmlFor="runtime" className="flex w-20">runtime</label>
-                <input
+
+                <TextField
+                  label="Runtime (seconds)"
                   type="number"
-                  id="runtime"
-                  className="bg-white border-2 border-black m-[5px] p-2"
+                  variant="outlined"
+                  fullWidth
                   value={runtime.seconds}
-                  onChange={(e) => setRuntime({seconds:Number(e.target.value)})}
+                  onChange={(e) =>
+                    setRuntime({ seconds: Number(e.target.value) })
+                  }
                 />
-              </div>
-              
-              <div className="flex flex-row">
-                <label htmlFor="imageCaption" className="flex w-20">image Caption</label>
-                <input
-                  type="text"
-                  id="imageCaption"
-                  className="bg-white border-2 border-black m-[5px] p-2"
+
+                <TextField
+                  label="Image Caption"
+                  variant="outlined"
+                  fullWidth
                   value={imageCaption}
                   onChange={(e) => setImageCaption(e.target.value)}
                 />
-              </div>
-              
 
-              <div className="flex flex-row">
-                <label htmlFor="tags" className="flex w-20">Tags</label>
-                <input
-                  type="text"
-                  id="tags"
-                  className="bg-white border-2 border-black m-[5px] p-2"
-                  value={attach}
-                  onChange={(e) => setAttach(e.target.value)}
-                />
-                <button type="button" onClick={Attach}>Add</button>
-              </div>
-              <div className="flex flex-row">
-                {tags && tags.map((tag, index) => (
-                  <div key={index} className="tag-item">
-                    {tag}
-                    <button
-                      type="button"
-                      className="bg-red-700 w-2 h-fit p-2"
-                      onClick={() => removeTag(index)}
-                    >
-                      x
-                    </button>
+                <div className="col-span-2 space-y-4">
+                  <div className="flex gap-3">
+                    <TextField
+                      label="Add tags..."
+                      variant="outlined"
+                      fullWidth
+                      value={attach}
+                      onChange={(e) => setAttach(e.target.value)}
+                    />
+                    <Button variant="contained" onClick={attachTag} sx={{ px: 4 }}>
+                      Add Tag
+                    </Button>
                   </div>
-                ))}
-              </div>
-              <div className="flex justify-between mt-4">
-                <button 
-                  type="submit" 
-                  className="bg-blue-500 text-white px-4 py-2 rounded"
-                  disabled={loading}
-                >
-                  {loading ? "Updating..." : "Update Movie"}
-                </button>
-                <button
-                  type="button"
-                  onClick={cancelHandler}
-                  className="bg-gray-500 text-white px-4 py-2 rounded"
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
+
+                  <div className="flex flex-wrap gap-2">
+                    {tags &&
+                      tags.map((tag, index) => (
+                        <Chip
+                          key={index}
+                          label={tag}
+                          onDelete={() => removeTag(index)}
+                          sx={{ m: 0.5 }}
+                        />
+                      ))}
+                  </div>
+                </div>
+
+                <div className="col-span-2 flex justify-end gap-4 mt-8">
+                  <Button variant="outlined" onClick={cancelHandler}>
+                    Cancel
+                  </Button>
+                  <Button variant="contained" type="submit" disabled={loading}>
+                    {loading ? "Updating..." : "Update"}
+                  </Button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
       <ToastContainer />
-    </div>
+    </>
   );
 }
+
